@@ -1,5 +1,5 @@
 1. Vivek -> Homepage
-2. Martine -> Navbar / signin / registerpage
+2. Martine -> Navbar / signin / registerpage / footer
 3. Amit -> UserLanding page / jobsrecomended / applyfor jobs
 4. All compnies
 5. Ajay -> Single compny / service.
