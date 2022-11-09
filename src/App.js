@@ -2,7 +2,7 @@ import "./App.css";
 import Companies from "./Pages/Companies";
 import Searchbar from "./Components/Searchbar";
 import TypesOfJob from "./Components/TypesOfJob";
-import Dummy2 from "./Components/dummy2";
+import Dummy from "./Components/Dummy2";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Companies />
       <Searchbar />
       <TypesOfJob />
-      <Dummy2 />
+      <Dummy />
     </div>
   );
 }
