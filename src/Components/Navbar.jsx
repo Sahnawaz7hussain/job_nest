@@ -16,10 +16,10 @@ const Navbar = () => {
    shadow="base">
         <VStack display={{ lg: 'flex' }}>
             <Flex w={{ base: '100%', sm: '50%', md: '100%' }} h={"8rem"}>
-                <Image  src={ProjectLogo} ml="1%"  w="20rem"  h={"8rem"}  ></Image>
+                <Image  src={ProjectLogo} ml="1%"  w="18rem"  h={"8rem"}  ></Image>
                 <Stack direction='row' spacing={20} align='center' ml={{md:5}}>
                
-                <Menu isLazy>
+                <Menu isLazy={{md:"show"}}>
                     <MenuButton color={"black"} >Jobs</MenuButton>
                   
                         
@@ -27,7 +27,7 @@ const Navbar = () => {
                         {/* MenuItems are not rendered unless Menu is open */}
                         <MenuItem  >
                                 <Grid templateColumns='repeat(4, 1fr)' gap={6} w="200%" ml="5%" >
-                                    <GridItem >
+                                    <GridItem borderRight={"1px"} >
                                     <b>Popular categories</b>
                                     <br />
                                    <span>IT jobs</span>
@@ -43,7 +43,7 @@ const Navbar = () => {
                                    <span>Engineering jobs</span>
                                     
                                     </GridItem>
-                                    <GridItem borderLeft={"1px"} >
+                                    <GridItem borderRight={"1px"} >
                                         <b>Jobs in demand</b>
                                         <br />
                                    <span>Fresher jobs</span>
@@ -59,7 +59,7 @@ const Navbar = () => {
                                    <span>Part-time jobs</span>
                                     
                                     </GridItem>
-                                    <GridItem borderLeft={"1px"}>
+                                    <GridItem borderRight={"1px"}>
                                         <b>Jobs by location</b>
                                         <br />
                                    <span>Fresher jobs</span>
@@ -75,7 +75,7 @@ const Navbar = () => {
                                    <span>Part-time jobs</span>
                                     
                                     </GridItem>
-                                    <GridItem borderLeft={"1px"}>
+                                    <GridItem >
                                         <b>Explore more jobs </b>
                                         <br />
                                    <span>Jobs by category</span>
@@ -104,7 +104,7 @@ const Navbar = () => {
                         {/* MenuItems are not rendered unless Menu is open */}
                         <MenuItem  >
                                 <Grid templateColumns='repeat(4, 1fr)' gap={6} w="200%" ml="5%" >
-                                    <GridItem>
+                                    <GridItem borderRight={"1px"}>
                                     <b>Explore category</b>
                                     <br />
                                    <span>Unicorn</span>
@@ -119,7 +119,7 @@ const Navbar = () => {
                                    
                                     
                                     </GridItem>
-                                    <GridItem borderLeft={"1px"}>
+                                    <GridItem borderRight={"1px"}>
                                         <b>Explore collection</b>
                                         <br />
                                    <span>Top companies</span>
@@ -134,7 +134,7 @@ const Navbar = () => {
                                    
                                     
                                     </GridItem>
-                                    <GridItem borderLeft={"1px"}>
+                                    <GridItem borderRight={"1px"}>
                                         <b>Research companies</b>
                                         <br />
                                    <span>Interview questions</span>
@@ -147,7 +147,7 @@ const Navbar = () => {
                                    
                                     
                                     </GridItem>
-                                    <GridItem borderLeft={"1px"}>
+                                    <GridItem>
                                         <b>Explore more jobs </b>
                                         <br />
                                    <span>Jobs by category</span>
@@ -199,7 +199,7 @@ const Navbar = () => {
                                    <br />
                                 </GridItem>
                                     </Grid>
-                                    <Grid>
+                                    <Grid borderRight={"1px"}>
                                     <GridItem>
                                         <b>Get recruiter's attention</b>
                                         <br />
@@ -221,7 +221,7 @@ const Navbar = () => {
                                 </GridItem>
                                     </Grid>
                             
-                                <GridItem borderLeft={"1px"}>
+                                <GridItem borderRight={"1px"}>
                                         <b>Research companies</b>
                                         <br />
                                    <span>Interview questions</span>
@@ -234,7 +234,7 @@ const Navbar = () => {
                                    
                                     
                                 </GridItem>
-                                <GridItem borderLeft={"1px"}>
+                                <GridItem borderRight={"1px"}>
                                         <b>Learn & upskill</b>
                                         <br />
                                    <span>Data Science courses</span>
@@ -253,7 +253,7 @@ const Navbar = () => {
                                     
                                     </GridItem>
 
-                                    <GridItem borderLeft={"1px"} >
+                                    <GridItem>
                                         <b>Free resume resources</b>
                                         <br />
                                    <span>Resume maker for freshers</span>
