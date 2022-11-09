@@ -1,12 +1,10 @@
 import "./App.css";
-import Searchbar from "./Components/Searchbar";
-import TypesOfJob from "./Components/TypesOfJob";
+import Companies from "./Pages/Companies";
 
 function App() {
   return (
     <div className="App">
-      <Searchbar />
-      <TypesOfJob />
+      <Companies />
     </div>
   );
 }
