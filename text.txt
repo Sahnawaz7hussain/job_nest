@@ -3,3 +3,8 @@
 3. Amit -> UserLanding page / jobsrecomended / applyfor jobs
 4. Sahnawaz -> All compnies
 5. Ajay -> Single compny / service.
+
+
+
+
+(background image ==> "https://static.naukimg.com/s/5/105/i/dashboardbg.png")

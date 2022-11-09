@@ -2,8 +2,8 @@ import "./App.css";
 import Companies from "./Pages/Companies";
 import Searchbar from "./Components/Searchbar";
 import TypesOfJob from "./Components/TypesOfJob";
-import Dummy from "./Components/Dummy2";
 import Navbar from "./Components/Navbar";
+import LandingPage from "./Pages/LandingPage";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <Companies />
       <Searchbar />
       <TypesOfJob />
-      <Dummy />
+      <LandingPage />
     </div>
   );
 }
