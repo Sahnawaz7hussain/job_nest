@@ -1,9 +1,10 @@
 import "./App.css";
+import Companies from "./Pages/Companies";
 
 function App() {
   return (
     <div className="App">
-      <h2>Naukri.com</h2>
+      <Companies />
     </div>
   );
 }
