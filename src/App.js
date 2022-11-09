@@ -1,9 +1,12 @@
 import "./App.css";
+import Searchbar from "./Components/Searchbar";
+import TypesOfJob from "./Components/TypesOfJob";
 
 function App() {
   return (
     <div className="App">
-      <h2>Naukri.com</h2>
+      <Searchbar />
+      <TypesOfJob />
     </div>
   );
 }
