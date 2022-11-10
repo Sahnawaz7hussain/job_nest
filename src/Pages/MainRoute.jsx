@@ -5,12 +5,13 @@ import Homepage from "./Homepage";
 import LandingPage from "./LandingPage";
 import Servicespage from "./Servicespage";
 import SingleCompany from "./SingleCompany";
+import Signup from "./Signup";
 
 const MainRoute = () => {
   return (
     <Routes>
       <Route path="/" element={<Homepage />} />
-      <Route path="/signup" element={<h1>RegisterPage will invode here</h1>} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/signin" element={<h1>LoginPage will invode here</h1>} />
 
       <Route path="/userpage" element={<LandingPage />} />

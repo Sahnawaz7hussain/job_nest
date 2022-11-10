@@ -5,11 +5,10 @@ import {
   Grid,
   Image,
   Heading,
-  Flex,
   Button,
 } from "@chakra-ui/react";
 import "./allcompanies.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { getCompniesActionFn } from "../../Redux/AppReducer/action";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
@@ -41,7 +40,7 @@ const AllCompanies = () => {
 
       dispatch(getCompniesActionFn(queryParams));
     }
-  }, [location.search, dispatch]);
+  }, [location.search, dispatch, searchParams]);
   console.log("locationn:::", location);
   return (
     <Box
