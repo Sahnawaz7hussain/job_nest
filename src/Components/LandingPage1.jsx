@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Container, FormLabel, Heading, HStack, Image, Input, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Container, HStack, Image, Input, Stack, Text, VStack } from "@chakra-ui/react";
 
 
 function Landingpage1 () {
@@ -24,11 +24,10 @@ function Landingpage1 () {
          <Box><Button borderRadius="none" bg="#4A90E2" color="white" fontSize="14px" padding=" 0px 28px" mt="-5px" 
          letterSpacing="0.5px"
         >SEARCH</Button></Box>
-
-      
        </HStack>
-       </Stack>
+          </Stack>
 
+       
        
     </Container>
     </>

@@ -8,3 +8,4 @@
 
 
 (background image ==> "https://static.naukimg.com/s/5/105/i/dashboardbg.png")
+keyskills image ==> "https://i.ibb.co/Y3bG6Tq/pencil.png"
