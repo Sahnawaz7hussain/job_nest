@@ -54,7 +54,7 @@ const Sidebar = () => {
 
   console.log("sector", industry);
   return (
-    <Box h="auto" w={"250px"} border="0px solid black">
+    <Box h="auto" w={"250px"}>
       <Box
         display={"flex"}
         alignItems="center"
