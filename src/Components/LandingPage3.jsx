@@ -1,10 +1,12 @@
-import { Box, Container, Heading, HStack, Image, Text } from "@chakra-ui/react";
+import { Box, Container, Heading, HStack, Image, Link, Text } from "@chakra-ui/react";
 import React from "react";
+import wallet from "../assets/wallet.png"
 
 function LandingPage3 () {
 
+
     return <>
-    <Container minW="100%" border={"1px solid red"} mt="30px" h="600px">
+    <Container minW="100%" border={"1px solid red"} mb="30px">
        <Heading as="h3" fontSize={"15px"}  borderBottom="1px solid gray" color="#333333"
         pt="25px" pb="12px" >Recommended Job(s)</Heading>
 
@@ -35,7 +37,14 @@ function LandingPage3 () {
                 <Box><Text fontSize={"13px"} color="#666666">Some Carriers Opens More (Global) Doors Than Others.</Text></Box>
             </HStack>  
 
-            <Box><Text>Posted 1 Day ago</Text></Box>   
+            <Box textAlign="right"><Text fontSize={"13px"} color="#666666">Posted 1 Day ago</Text></Box>
+
+            <HStack mt="5px" ml="2px">
+                <Box w="20px"><Image src={wallet} alt="summary" /></Box>
+                <Box><Text fontSize={"13px"} color="#666666">Some Carriers Opens More (Global) Doors Than Others.</Text></Box>
+            </HStack>  
+
+            <Box textAlign={"right"} mt="15px" mb="15px"><Link isExternal="true" _hover="" color="#4A90E2" href="#" fontSize={"14px"} >VIEW ALL</Link></Box>
 
        
     </Container>
