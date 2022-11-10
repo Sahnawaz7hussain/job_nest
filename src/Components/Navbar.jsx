@@ -11,9 +11,12 @@ import {ChevronDownIcon} from "@chakra-ui/icons"
 const Navbar = () => {
   return (
     <div>
-      <Box position="sticky" top="0"
-   zIndex={10}
-   shadow="base">
+      <Box 
+       boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+       position="sticky"
+       top="0"
+       zIndex="10"
+       background="white">
         <VStack display={{ lg: 'flex' }}>
             <Flex w={{ base: '100%', sm: '50%', md: '100%' }} h={"5rem"}>
                 <Image  src={ProjectLogo} ml="10%"    ></Image>
