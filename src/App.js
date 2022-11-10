@@ -1,18 +1,19 @@
 import "./App.css";
-import Companies from "./Pages/Companies";
+// import Companies from "./Pages/Companies";
 import Searchbar from "./Components/Searchbar";
 import TypesOfJob from "./Components/TypesOfJob";
 import Navbar from "./Components/Navbar";
-import LandingPage from "./Pages/LandingPage";
+import MainRoute from "./Pages/MainRoute";
+// import LandingPage from "./Pages/LandingPage";
 
 function App() {
   return (
     <div className="App">
-      {/* <Navbar/>
-      <Companies />
-      <Searchbar />
-      <TypesOfJob /> */}
-      <LandingPage />
+      <Navbar />
+
+      {/* <Searchbar /> */}
+      {/* <TypesOfJob /> */}
+      <MainRoute />
     </div>
   );
 }
