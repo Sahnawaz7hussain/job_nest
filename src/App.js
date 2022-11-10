@@ -3,6 +3,7 @@ import "./App.css";
 import Searchbar from "./Components/Searchbar";
 import TypesOfJob from "./Components/TypesOfJob";
 import Navbar from "./Components/Navbar";
+import MainRoute from "./Pages/MainRoute";
 // import LandingPage from "./Pages/LandingPage";
 
 function App() {
@@ -10,8 +11,9 @@ function App() {
     <div className="App">
       <Navbar />
 
-      <Searchbar />
-      <TypesOfJob />
+      {/* <Searchbar /> */}
+      {/* <TypesOfJob /> */}
+      <MainRoute />
     </div>
   );
 }
