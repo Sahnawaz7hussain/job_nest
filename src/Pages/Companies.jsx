@@ -9,7 +9,13 @@ const Companies = () => {
       <Heading textAlign={"center"} my="40px" size={"lg"}>
         Featured companies actively hiring
       </Heading>
-      <Box width={"90%"} m="auto" display={"flex"}>
+      <Box
+        w={"90%"}
+        m="auto"
+        h="auto"
+        display={"flex"}
+        border={"0px solid green"}
+      >
         <Sidebar />
         <AllCompanies />
       </Box>
