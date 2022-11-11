@@ -33,7 +33,7 @@ const AllCompanies = () => {
       const queryParams = {
         params: {
           sector,
-          industry,
+          companytype: industry,
           location,
         },
       };
@@ -41,7 +41,21 @@ const AllCompanies = () => {
       dispatch(getCompniesActionFn(queryParams));
     }
   }, [location.search, dispatch, searchParams]);
-  console.log("locationn:::", location);
+  // console.log("locationn:::", location);
+  if (isLoading) {
+    return (
+      <Heading size="lg" textAlign={"center"} m="auto" mt="10px">
+        Loading...
+      </Heading>
+    );
+  }
+  if (isError) {
+    return (
+      <Heading size="lg" color="red" textAlign={"center"} m="auto" mt="10px">
+        Something went wrong...
+      </Heading>
+    );
+  }
   return (
     <Box
       h={"auto"}
