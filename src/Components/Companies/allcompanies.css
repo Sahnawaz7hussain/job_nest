@@ -1,0 +1,8 @@
+.companiesBoxContainer:hover {
+  cursor: pointer;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1.02);
+  transition: all 0.5s ease-in-out;
+}

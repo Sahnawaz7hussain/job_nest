@@ -1,12 +1,16 @@
 import './App.css';
 import React from 'react';
-import AllRout from './Routing/AllRout';
+import "./App.css";
+import Navbar from "./Components/Navbar";
+import MainRoute from "./Pages/MainRoute";
 
 function App() {
   return (
     <div className="App">
 
-      <AllRout/>
+   
+      <Navbar />
+      <MainRoute />
     </div>
 )
 
