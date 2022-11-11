@@ -31,20 +31,22 @@ function LandingPage6 () {
 
 
 
-            <HStack minW="full" h="102px" p="10px" border={"1px solid black"}>
+            <HStack minW="full" h="102px" p="10px" border={"1px solid black"} pr="20px">
                
                     <Box w="14%" h="full"><Center>
                     <Image w="100%" h="80px" borderRadius="50px" src="https://img.etimg.com/thumb/msid-68770565,width-650,imgsize-924959,,resizemode-4,quality-100/prabhkiran-singh.jpg" alt="n" /></Center></Box>
                    
-                   <VStack w="20%" h="full" pt="12px">
+                   <VStack w="25%" h="full" pt="12px">
                         <Box><Heading fontSize="15px" color="#333333" fontWeight="500">Prabhkiran Singh</Heading></Box>
                         <Text fontSize="13px" color="#666666" fontWeight="500" lineHeight="7px">Bewkoof.com</Text>
                         <Text fontSize="13px" color="#666666" fontWeight="500" lineHeight="9px">Mumbai</Text>
                         <Box></Box>
                     </VStack>
 
-                    <Box pl="80px" pt="28px" w="40%" h="full"><Link isExternal="true" _hover="" color="#4A90E2" href="#" fontSize={"14px"} fontWeight="500" >SEND MESSAGE</Link></Box>
-            <Box w="20%" h="full" pt="22px"><Button fontSize="14.5px" bgColor="#FFF" color="#4A90E2" borderRadius="none" border="1px solid #4A90E2" p="0px 32px">FOLLOW</Button>
+            <Box pl="70px" pt="28px" w="40%" h="full"><Link isExternal="true" _hover="" color="#4A90E2" href="#" fontSize={"14px"} fontWeight="500" >SEND MESSAGE</Link></Box>
+
+            <Box  w="20%" h="full" pt="22px">
+                <Button fontSize="14.5px" bgColor="#FFF" color="#4A90E2" borderRadius="none" border="1px solid #4A90E2" p="0px 32px">FOLLOW</Button>
             <Text textAlign="right" fontSize="13px" color="#666666">1663 Followers</Text>
             </Box>
             </HStack>
