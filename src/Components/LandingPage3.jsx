@@ -7,8 +7,8 @@ function LandingPage3 () {
 
     return <>
     <Container minW="100%" border={"1px solid red"} mb="30px">
-       <Heading as="h3" fontSize={"15px"}  borderBottom="1px solid gray" color="#333333"
-        pt="25px" pb="12px" >Recommended Job(s)</Heading>
+       <Box ml="-18px" mr="-18px" borderBottom="1px solid gray"><Heading as="h3" pl="18px" fontSize={"15px"} color="#333333"
+        pt="28px" pb="12px" >Recommended Job(s)</Heading></Box>
 
         <Box border={"1px solid red"} mt="20px" pl="32px">
         <Heading fontSize={"14.5"} color="#333333">Full Stack Developer - B2B SaaS (Work From Home)</Heading>
@@ -41,10 +41,10 @@ function LandingPage3 () {
 
             <HStack mt="5px" ml="2px">
                 <Box w="20px"><Image src={wallet} alt="summary" /></Box>
-                <Box><Text fontSize={"13px"} color="#666666">Some Carriers Opens More (Global) Doors Than Others.</Text></Box>
+                <Box><Text fontSize={"13px"} color="#666666">Not Disclosed</Text></Box>
             </HStack>  
 
-            <Box textAlign={"right"} mt="15px" mb="15px"><Link isExternal="true" _hover="" color="#4A90E2" href="#" fontSize={"14px"} >VIEW ALL</Link></Box>
+            <Box textAlign={"right"} mt="15px" mb="15px"><Link isExternal="true" fontWeight="500" _hover="" color="#4A90E2" href="/user/recommendedjobs" fontSize={"14px"} >VIEW ALL</Link></Box>
 
        
     </Container>
