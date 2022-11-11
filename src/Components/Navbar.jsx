@@ -1,336 +1,832 @@
-import React from "react";
-import {
-  VStack,
-  Flex,
-  Box,
-  Image,
-  Button,
-  Stack,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  Spacer,
-  Grid,
-  GridItem,
-} from "@chakra-ui/react";
-import ProjectLogo from "../assets/projectlogo.png";
+import React, { useState } from "react";
+import { Box,  Text, Stack, Flex, Icon,Image,Button,Popover,PopoverContent,PopoverTrigger,Center, PopoverArrow, 
+     PopoverBody,  ListItem, 
+    UnorderedList, Container,HStack,MenuButton,MenuList,Menu} from "@chakra-ui/react";
+import { MdClose, MdMenu } from "react-icons/md";
+import ProjectLogo from "../assets/projectlogo.png"
+import {  NavLink } from "react-router-dom";
+import { ChevronDownIcon } from '@chakra-ui/icons'
+import SignIn from "../Pages/SignIn";
+import { useNavigate } from "react-router-dom";
 
-import { ChevronDownIcon } from "@chakra-ui/icons";
-import { NavLink } from "react-router-dom";
-
-const Navbar = () => {
+const Logo = () => {
+    
   return (
-    <div>
-      <Box
+    
+    <Box >
+        
+            <NavLink to="/"> <Image src={ProjectLogo} ml={{lg:"150px"}} /></NavLink>
+    </Box>
+    
+  );
+};
+
+const MenuToggle = ({ toggle, isOpen }) => {
+  return (
+    <Box display={{ base: "block", md: "none" }} onClick={toggle}>
+      {isOpen ? <Icon as={MdClose} /> : <Icon as={MdMenu} />}
+    </Box>
+  );
+};
+
+const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
+  return (
+    <NavLink href={to}>
+      <Text display="block" {...rest}>
+        {children}
+      </Text>
+    </NavLink>
+  );
+};
+const MenuLinks1 = ({ isOpen }) => {
+    const links = {color:"grey", cursor:"pointer"};
+  return (
+    <Box
+      display={{ base: isOpen ? "block" : "none", md: "block" }}
+      flexBasis={{ base: "100%", md: "auto" }}
+    >
+      <Stack
+        spacing={20}
+        align="center"
+        justify={["center", "space-between", "flex-end"]}
+        direction={["column", "row"]}
+        paddingTop={[4, 4, 0]}
+        ml={{lg:"-250px"}}
+      >
+           <MenuItem  >
+        <Box  p="20%">
+        <Popover trigger="hover">
+        {({ isOpen, onClose }) => (
+         <>
+  <PopoverTrigger>
+    <Center><NavLink to="/jobs"><Text fontSize=".95rem" fontWeight="500" _hover={links} align="center">Jobs </Text></NavLink></Center>
+  </PopoverTrigger>
+  <PopoverContent boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" width={{lg:"70%"}} fontWeight="500">
+    <PopoverArrow />
+    
+    
+    
+    <PopoverBody>
+      <Container minW="1200px" alignItems="start">
+
+     <Flex>
+      <HStack alignItems="start" mr="40px" ml="-20px">
+      
+         <UnorderedList listStyleType="none"  spacing={1.5} textAlign="left">
+         
+         <ListItem ><b>Popular categories</b></ListItem>
+  <ListItem onClick={onClose} _hover={links}>IT jobs</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Sales jobs</ListItem>
+  <ListItem onClick={onClose}  _hover={links}>Marketing jobs</ListItem>
+  <ListItem onClick={onClose}  _hover={links}>Data Science jobs</ListItem>
+  <ListItem onClick={onClose}  _hover={links}>HR jobs</ListItem>
+  <ListItem onClick={onClose}  _hover={links}>Engineering jobs</ListItem>
+</UnorderedList>
+         </HStack>
+         <HStack alignItems="start">
+         <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+         <ListItem ><b>Jobs in demand</b></ListItem>
+  <ListItem onClick={onClose} _hover={links}>MFresher jobs</ListItem>
+  <ListItem onClick={onClose} _hover={links}>MNC jobs</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Remote jobs</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Work from home jobs</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Walk-in jobs</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Part-time jobs</ListItem>
+</UnorderedList>
+         </HStack>
+         <HStack alignItems="start">
+         <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+         <ListItem ><b>Jobs by location</b></ListItem>
+         <ListItem onClick={onClose} _hover={links}>MFresher jobs</ListItem>
+  <ListItem onClick={onClose} _hover={links}>MNC jobs</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Remote jobs</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Work from home jobs</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Walk-in jobs</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Part-time jobs</ListItem>
+  
+</UnorderedList>
+         </HStack>
+         <HStack alignItems="start">
+         <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+         <ListItem ><b>Explore more jobs</b></ListItem>
+  <ListItem onClick={onClose} _hover={links}>Jobs by category</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Jobs by skill</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Jobs by location</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Jobs by designation</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Create free job alert</ListItem>
+  
+</UnorderedList>
+         </HStack>
+         </Flex>
+      </Container>
+    </PopoverBody>
+    
+    
+
+  </PopoverContent>
+  </>
+        )}
+</Popover>
+        </Box>
+        </MenuItem>
+
+       
+        <MenuItem to="#">
+        <Box  p="20%">
+        <Popover trigger="hover">
+        {({ isOpen, onClose }) => (
+         <>
+  <PopoverTrigger>
+    <Center>,<NavLink to="/companies"><Text fontSize=".95rem" fontWeight="500" _hover={links}>Companies </Text></NavLink></Center>
+  </PopoverTrigger>
+  <PopoverContent boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" width={{lg:"60%"}} fontWeight="500">
+    <PopoverArrow />
+    
+    
+    
+    <PopoverBody>
+      <Container minW="1200px" alignItems="start">
+
+     <Flex>
+      <HStack alignItems="start" mr="40px" ml="-20px">
+      
+         <UnorderedList listStyleType="none"  spacing={1.5} textAlign="left" >
+         
+         <ListItem ><b>Explore category</b></ListItem>
+  <ListItem onClick={onClose} _hover={links}>Unicorn</ListItem>
+  <ListItem onClick={onClose} _hover={links}>MNC</ListItem>
+  <ListItem onClick={onClose}  _hover={links}>Startup</ListItem>
+  <ListItem onClick={onClose}  _hover={links}>Product based</ListItem>
+  <ListItem onClick={onClose}  _hover={links}>Internet</ListItem>
+  
+</UnorderedList>
+         </HStack>
+         <HStack alignItems="start">
+         <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+         <ListItem ><b>Explore collection</b></ListItem>
+  <ListItem onClick={onClose} _hover={links}>Top companies</ListItem>
+  <ListItem onClick={onClose} _hover={links}>IT companies</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Fintech companies</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Sponsored companies</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Featured companies</ListItem>
+  
+</UnorderedList>
+         </HStack>
+         <HStack alignItems="start">
+         <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+         <ListItem ><b>Research companies</b></ListItem>
+         <ListItem onClick={onClose} _hover={links}>Interview questions</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Company salaries</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Company reviews</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Salary Calculator</ListItem>
+  
+  
+</UnorderedList>
+         </HStack>
+         <HStack alignItems="start">
+         <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+         <ListItem ><b>Explore more jobs</b></ListItem>
+  <ListItem onClick={onClose} _hover={links}>Jobs by category</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Jobs by skill</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Jobs by location</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Jobs by designation</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Create free job alert</ListItem>
+  
+</UnorderedList>
+         </HStack>
+         </Flex>
+      </Container>
+    </PopoverBody>
+    
+    
+
+  </PopoverContent>
+  </>
+        )}
+</Popover>
+        </Box>
+        </MenuItem>
+
+        <MenuItem to="#">
+        <Box  p="20%">
+        <Popover trigger="hover">
+        {({ isOpen, onClose }) => (
+         <>
+  <PopoverTrigger>
+    <Center><NavLink to="/services"><Text fontSize=".95rem" fontWeight="500" _hover={links}>Services </Text></NavLink></Center>
+  </PopoverTrigger>
+  <PopoverContent boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" width={{lg:"80%"}} fontWeight="500">
+    <PopoverArrow />
+    
+    
+    
+    <PopoverBody>
+      <Container minW="1200px" alignItems="start">
+
+     <Flex>
+      <HStack alignItems="start" mr="40px" ml="-20px">
+      
+         <UnorderedList listStyleType="none"  spacing={1.5} textAlign="left" >
+         
+         <ListItem ><b>Resume writing</b></ListItem>
+  <ListItem onClick={onClose} _hover={links}>Text resume</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Visual resume</ListItem>
+  <ListItem onClick={onClose}  _hover={links}>Resume critique</ListItem>
+  <br></br>
+  <ListItem ><b>Find Jobs</b></ListItem>
+  <ListItem onClick={onClose} _hover={links}>Jobs4u</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Priority applicant</ListItem>
+  <ListItem onClick={onClose}  _hover={links}>Contact us</ListItem>
+ 
+  
+</UnorderedList>
+         </HStack>
+         <HStack alignItems="start">
+         <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+         <ListItem ><b>Get recruiter's attention</b></ListItem>
+  <ListItem onClick={onClose} _hover={links}>Resume display</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Recruiter connection</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Job search booster</ListItem>
+  <br></br>
+  <ListItem ><b>Monthly subscriptions</b></ListItem>
+  <ListItem onClick={onClose} _hover={links}>Basic & premium plans</ListItem>
+  
+  
+</UnorderedList>
+         </HStack>
+         <HStack alignItems="start">
+         <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+         <ListItem ><b>Research companies</b></ListItem>
+         <ListItem onClick={onClose} _hover={links}>Interview questions</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Company salaries</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Company reviews</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Salary Calculator</ListItem>
+  
+  
+</UnorderedList>
+         </HStack>
+         <HStack alignItems="start">
+         <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+         <ListItem ><b>Learn & upskill</b></ListItem>
+  <ListItem onClick={onClose} _hover={links}>Data Science courses</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Technology courses</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Management courses</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Finance courses</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Design courses</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Healthcare courses</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Degree programs</ListItem>
+  
+</UnorderedList>
+         </HStack>
+
+         
+         <HStack alignItems="start">
+         <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+         <ListItem ><b>Free resume resources</b></ListItem>
+         <ListItem onClick={onClose} _hover={links}>Resume maker for freshers</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Resume quality score</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Resume samples</ListItem>
+  <ListItem onClick={onClose} _hover={links}>Job letter samples</ListItem>
+  
+  
+</UnorderedList>
+         </HStack>
+         </Flex>
+      </Container>
+    </PopoverBody>
+    
+    
+
+  </PopoverContent>
+  </>
+        )}
+</Popover>
+        </Box>
+        </MenuItem>
+     
+     
+      
+      </Stack>
+    </Box>
+  );
+};
+
+const MenuLinks = ({ isOpen }) => {
+  
+  const navigate=useNavigate()
+  const useName=JSON.parse(localStorage.getItem("user"))||""
+  const handelLogout=()=>{
+   localStorage.removeItem("loggedin")
+   navigate("/")
+  }
+    
+  return (
+    <Box
+      display={{ base: isOpen ? "block" : "none", md: "block" }}
+      flexBasis={{ base: "100%", md: "auto" }}
+    >
+      <Stack
+        spacing={8}
+        align="center"
+        justify={["center", "space-between", "flex-end"]}
+        direction={["column", "row"]}
+        paddingTop={[4, 4, 0]}
+        mr={{lg:"150px"}}
+      >
+       
+     
+        <MenuItem to="#">
+        <Flex gap="10">
+      
+              <Text fontSize="25" fontWeight="extrabold" > {useName.name} </Text> 
+              <SignIn />
+              
+              </Flex>
+            </MenuItem>
+            
+        <MenuItem to="#">
+            <NavLink to="/signup"><Button colorScheme="red" variant='solid' borderRadius='md'>Register</Button></NavLink>
+        </MenuItem>
+        <MenuItem to="#">
+        <Menu>
+                    <MenuButton color={"black"}
+                    as={Button} rightIcon={<ChevronDownIcon />} backgroundColor="white">
+                        For Employers
+                    </MenuButton>
+                    <MenuList backgroundColor={"white"} color={"black"} align="center">
+                        <MenuItem>Buy Online</MenuItem>
+                       <MenuItem>Hiring Solutions</MenuItem>
+                       <MenuItem>Employer Login</MenuItem>
+                       <MenuItem>
+                        <Button onClick={handelLogout}>LOGOUT</Button>
+                        </MenuItem>
+                    </MenuList>
+                </Menu>
+      
+       </MenuItem>
+      </Stack>
+    </Box>
+  );
+};
+
+const NavBarContainer = ({ children }) => {
+  return (
+    <Flex
+      as="nav"
+      align="center"
+      justify="space-between"
+      wrap="wrap"
+      width="100%"
+      padding={1}
+      
+      bg={"transparent"}
+      color={"gray.600"}
+      maxW="100%"
         boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
         position="sticky"
         top="0"
         zIndex="10"
         background="white"
-      >
-        <VStack display={{ lg: "flex" }}>
-          <Flex w={{ base: "100%", sm: "50%", md: "100%" }} h={"5rem"}>
-            <Image src={ProjectLogo} ml="10%"></Image>
-            <Stack direction="row" spacing={20} align="center" ml={{ md: 5 }}>
-              <Menu isLazy={{ md: "show" }}>
-                <NavLink to="/jobs">
-                  <MenuButton color={"black"}>Jobs</MenuButton>
-                </NavLink>
-
-                <MenuList
-                  backgroundColor={"white"}
-                  color={"black"}
-                  minH="15em"
-                  minW="50em"
-                >
-                  {/* MenuItems are not rendered unless Menu is open */}
-                  <MenuItem>
-                    <Grid
-                      templateColumns="repeat(4, 1fr)"
-                      gap={6}
-                      w="200%"
-                      ml="5%"
-                    >
-                      <GridItem borderRight={"1px"}>
-                        <b>Popular categories</b>
-                        <br />
-                        <span>IT jobs</span>
-                        <br />
-                        <span>Sales jobs</span>
-                        <br />
-                        <span>Marketing jobs</span>
-                        <br />
-                        <span>Data Science jobs</span>
-                        <br />
-                        <span>HR jobs</span>
-                        <br />
-                        <span>Engineering jobs</span>
-                      </GridItem>
-                      <GridItem borderRight={"1px"}>
-                        <b>Jobs in demand</b>
-                        <br />
-                        <span>Fresher jobs</span>
-                        <br />
-                        <span>MNC jobs</span>
-                        <br />
-                        <span>Remote jobs</span>
-                        <br />
-                        <span>Work from home jobs</span>
-                        <br />
-                        <span>Walk-in jobs</span>
-                        <br />
-                        <span>Part-time jobs</span>
-                      </GridItem>
-                      <GridItem borderRight={"1px"}>
-                        <b>Jobs by location</b>
-                        <br />
-                        <span>Fresher jobs</span>
-                        <br />
-                        <span>MNC jobs</span>
-                        <br />
-                        <span>Remote jobs</span>
-                        <br />
-                        <span>Work from home jobs</span>
-                        <br />
-                        <span>Walk-in jobs</span>
-                        <br />
-                        <span>Part-time jobs</span>
-                      </GridItem>
-                      <GridItem>
-                        <b>Explore more jobs </b>
-                        <br />
-                        <span>Jobs by category</span>
-                        <br />
-                        <span>Jobs by skill</span>
-                        <br />
-                        <span>Jobs by location</span>
-                        <br />
-                        <span>Jobs by designation</span>
-                        <br />
-                        <span>Create free job alert</span>
-                      </GridItem>
-                    </Grid>
-                  </MenuItem>
-                </MenuList>
-              </Menu>
-              <Menu>
-                <NavLink to="/companies">
-                  <MenuButton color={"black"}>Companies</MenuButton>
-                </NavLink>
-                <MenuList
-                  backgroundColor={"white"}
-                  color={"black"}
-                  minH="15em"
-                  minW="50em"
-                >
-                  {/* MenuItems are not rendered unless Menu is open */}
-                  <MenuItem>
-                    <Grid
-                      templateColumns="repeat(4, 1fr)"
-                      gap={6}
-                      w="200%"
-                      ml="5%"
-                    >
-                      <GridItem borderRight={"1px"}>
-                        <b>Explore category</b>
-                        <br />
-                        <span>Unicorn</span>
-                        <br />
-                        <span>MNC</span>
-                        <br />
-                        <span>Startup</span>
-                        <br />
-                        <span>Product based</span>
-                        <br />
-                        <span>Internet</span>
-                      </GridItem>
-                      <GridItem borderRight={"1px"}>
-                        <b>Explore collection</b>
-                        <br />
-                        <span>Top companies</span>
-                        <br />
-                        <span>IT companies</span>
-                        <br />
-                        <span>Fintech companies</span>
-                        <br />
-                        <span>Sponsored companies</span>
-                        <br />
-                        <span>Featured companies</span>
-                      </GridItem>
-                      <GridItem borderRight={"1px"}>
-                        <b>Research companies</b>
-                        <br />
-                        <span>Interview questions</span>
-                        <br />
-                        <span>Company salaries</span>
-                        <br />
-                        <span>Company reviews</span>
-                        <br />
-                        <span>Salary Calculator</span>
-                      </GridItem>
-                      <GridItem>
-                        <b>Explore more jobs </b>
-                        <br />
-                        <span>Jobs by category</span>
-                        <br />
-                        <span>Jobs by skill</span>
-                        <br />
-                        <span>Jobs by location</span>
-                        <br />
-                        <span>Jobs by designation</span>
-                        <br />
-                        <span>Create free job alert</span>
-                      </GridItem>
-                    </Grid>
-                  </MenuItem>
-                </MenuList>
-              </Menu>
-              <Menu>
-                <NavLink to="/services">
-                  {" "}
-                  <MenuButton color={"black"}>Services</MenuButton>
-                </NavLink>
-                <MenuList
-                  backgroundColor={"white"}
-                  color={"black"}
-                  minH="15em"
-                  minW="50em"
-                >
-                  {/* MenuItems are not rendered unless Menu is open */}
-                  <MenuItem>
-                    <Grid
-                      templateColumns="repeat(5, 1fr)"
-                      gap={6}
-                      w="200%"
-                      ml="5%"
-                    >
-                      <Grid
-                        templateColumns="repeat(1, 1fr)"
-                        gap={6}
-                        w="200%"
-                        ml="5%"
-                      >
-                        <GridItem>
-                          <b>Resume writing</b>
-                          <br />
-                          <span>Text resume</span>
-                          <br />
-                          <span>Visual resume</span>
-                          <br />
-                          <span>Resume critique</span>
-                          <br />
-                        </GridItem>
-                        <GridItem>
-                          <b>Find Jobs</b>
-                          <br />
-                          <span>Jobs4u</span>
-                          <br />
-                          <span>Priority applicant</span>
-                          <br />
-                          <span>Contact us</span>
-                          <br />
-                        </GridItem>
-                      </Grid>
-                      <Grid borderRight={"1px"}>
-                        <GridItem>
-                          <b>Get recruiter's attention</b>
-                          <br />
-                          <span>Resume display</span>
-                          <br />
-                          <span>Recruiter connection</span>
-                          <br />
-                          <span>Job search booster</span>
-                          <br />
-                        </GridItem>
-                        <GridItem>
-                          <b>Monthly subscriptions</b>
-                          <br />
-                          <span>Basic & premium plans</span>
-                        </GridItem>
-                      </Grid>
-
-                      <GridItem borderRight={"1px"}>
-                        <b>Research companies</b>
-                        <br />
-                        <span>Interview questions</span>
-                        <br />
-                        <span>Company salaries</span>
-                        <br />
-                        <span>Company reviews</span>
-                        <br />
-                        <span>Salary Calculator</span>
-                      </GridItem>
-                      <GridItem borderRight={"1px"}>
-                        <b>Learn & upskill</b>
-                        <br />
-                        <span>Data Science courses</span>
-                        <br />
-                        <span>Technology courses</span>
-                        <br />
-                        <span>Management courses</span>
-                        <br />
-                        <span>Finance courses</span>
-                        <br />
-                        <span>Design courses</span>
-                        <br />
-                        <span>Healthcare courses</span>
-                        <br />
-                        <span>Degree programs</span>
-                      </GridItem>
-
-                      <GridItem>
-                        <b>Free resume resources</b>
-                        <br />
-                        <span>Resume maker for freshers</span>
-                        <br />
-                        <span>Resume quality score</span>
-                        <br />
-                        <span>Resume samples</span>
-                        <br />
-                        <span>Job letter samples</span>
-                        <br />
-                      </GridItem>
-                    </Grid>
-                  </MenuItem>
-                </MenuList>
-              </Menu>
-            </Stack>
-
-            <Spacer></Spacer>
-            <Stack direction="row" spacing={4} align="center" mr={{ md: 8 }}>
-              <NavLink to="/sigin">
-                {" "}
-                <Button colorScheme="blue" variant="outline" borderRadius="md">
-                  Login
-                </Button>
-              </NavLink>
-              <NavLink to="signup">
-                {" "}
-                <Button colorScheme="red" variant="solid" borderRadius="md">
-                  Register
-                </Button>
-              </NavLink>
-              <Menu>
-                <MenuButton
-                  color={"black"}
-                  as={Button}
-                  rightIcon={<ChevronDownIcon />}
-                >
-                  For Employers
-                </MenuButton>
-                <MenuList backgroundColor={"white"} color={"black"}>
-                  <MenuItem>Buy Online</MenuItem>
-                  <MenuItem>Hiring Solutions</MenuItem>
-                  <MenuItem>Employer Login</MenuItem>
-                </MenuList>
-              </Menu>
-            </Stack>
-          </Flex>
-        </VStack>
-      </Box>
-    </div>
+    >
+      {children}
+    </Flex>
   );
 };
 
+function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  return (
+    <NavBarContainer>
+      <Logo  />
+      <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
+      <MenuLinks1 isOpen={isOpen}/>
+      <MenuLinks isOpen={isOpen} />
+    </NavBarContainer>
+    
+  );
+}
+
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from "react";
+// import { Box,  Text, Stack, Flex, Icon,Image,Button,Popover,PopoverContent,PopoverTrigger,Center, PopoverArrow, 
+//      PopoverBody,  ListItem, 
+//     UnorderedList, Container,HStack,MenuButton,MenuList,Menu} from "@chakra-ui/react";
+// import { MdClose, MdMenu } from "react-icons/md";
+// import ProjectLogo from "../assets/projectlogo.png"
+// import {  NavLink } from "react-router-dom";
+// import { ChevronDownIcon } from '@chakra-ui/icons'
+
+
+// const Logo = () => {
+    
+//   return (
+    
+//     <Box >
+        
+//             <NavLink to="/"> <Image src={ProjectLogo} ml={{lg:"150px"}} /></NavLink>
+//     </Box>
+    
+//   );
+// };
+
+// const MenuToggle = ({ toggle, isOpen }) => {
+//   return (
+//     <Box display={{ base: "block", md: "none" }} onClick={toggle}>
+//       {isOpen ? <Icon as={MdClose} /> : <Icon as={MdMenu} />}
+//     </Box>
+//   );
+// };
+
+// const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
+//   return (
+//     <NavLink href={to}>
+//       <Text display="block" {...rest}>
+//         {children}
+//       </Text>
+//     </NavLink>
+//   );
+// };
+// const MenuLinks1 = ({ isOpen }) => {
+//     const links = {color:"grey", cursor:"pointer"};
+//   return (
+//     <Box
+//       display={{ base: isOpen ? "block" : "none", md: "block" }}
+//       flexBasis={{ base: "100%", md: "auto" }}
+//     >
+//       <Stack
+//         spacing={20}
+//         align="center"
+//         justify={["center", "space-between", "flex-end"]}
+//         direction={["column", "row"]}
+//         paddingTop={[4, 4, 0]}
+//         ml={{lg:"-250px"}}
+//       >
+//            <MenuItem  >
+//         <Box  p="20%">
+//         <Popover trigger="hover">
+//         {({ isOpen, onClose }) => (
+//          <>
+//   <PopoverTrigger>
+//     <Center><NavLink to="/jobs"><Text fontSize=".95rem" fontWeight="500" _hover={links} align="center">Jobs </Text></NavLink></Center>
+//   </PopoverTrigger>
+//   <PopoverContent boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" width={{lg:"70%"}} fontWeight="500">
+//     <PopoverArrow />
+    
+    
+    
+//     <PopoverBody>
+//       <Container minW="1200px" alignItems="start">
+
+//      <Flex>
+//       <HStack alignItems="start" mr="40px" ml="-20px">
+      
+//          <UnorderedList listStyleType="none"  spacing={1.5} textAlign="left">
+         
+//          <ListItem ><b>Popular categories</b></ListItem>
+//   <ListItem onClick={onClose} _hover={links}>IT jobs</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Sales jobs</ListItem>
+//   <ListItem onClick={onClose}  _hover={links}>Marketing jobs</ListItem>
+//   <ListItem onClick={onClose}  _hover={links}>Data Science jobs</ListItem>
+//   <ListItem onClick={onClose}  _hover={links}>HR jobs</ListItem>
+//   <ListItem onClick={onClose}  _hover={links}>Engineering jobs</ListItem>
+// </UnorderedList>
+//          </HStack>
+//          <HStack alignItems="start">
+//          <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+//          <ListItem ><b>Jobs in demand</b></ListItem>
+//   <ListItem onClick={onClose} _hover={links}>MFresher jobs</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>MNC jobs</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Remote jobs</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Work from home jobs</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Walk-in jobs</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Part-time jobs</ListItem>
+// </UnorderedList>
+//          </HStack>
+//          <HStack alignItems="start">
+//          <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+//          <ListItem ><b>Jobs by location</b></ListItem>
+//          <ListItem onClick={onClose} _hover={links}>MFresher jobs</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>MNC jobs</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Remote jobs</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Work from home jobs</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Walk-in jobs</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Part-time jobs</ListItem>
+  
+// </UnorderedList>
+//          </HStack>
+//          <HStack alignItems="start">
+//          <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+//          <ListItem ><b>Explore more jobs</b></ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Jobs by category</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Jobs by skill</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Jobs by location</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Jobs by designation</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Create free job alert</ListItem>
+  
+// </UnorderedList>
+//          </HStack>
+//          </Flex>
+//       </Container>
+//     </PopoverBody>
+    
+    
+
+//   </PopoverContent>
+//   </>
+//         )}
+// </Popover>
+//         </Box>
+//         </MenuItem>
+
+       
+//         <MenuItem to="#">
+//         <Box  p="20%">
+//         <Popover trigger="hover">
+//         {({ isOpen, onClose }) => (
+//          <>
+//   <PopoverTrigger>
+//     <Center>,<NavLink to="/companies"><Text fontSize=".95rem" fontWeight="500" _hover={links}>Companies </Text></NavLink></Center>
+//   </PopoverTrigger>
+//   <PopoverContent boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" width={{lg:"60%"}} fontWeight="500">
+//     <PopoverArrow />
+    
+    
+    
+//     <PopoverBody>
+//       <Container minW="1200px" alignItems="start">
+
+//      <Flex>
+//       <HStack alignItems="start" mr="40px" ml="-20px">
+      
+//          <UnorderedList listStyleType="none"  spacing={1.5} textAlign="left" >
+         
+//          <ListItem ><b>Explore category</b></ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Unicorn</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>MNC</ListItem>
+//   <ListItem onClick={onClose}  _hover={links}>Startup</ListItem>
+//   <ListItem onClick={onClose}  _hover={links}>Product based</ListItem>
+//   <ListItem onClick={onClose}  _hover={links}>Internet</ListItem>
+  
+// </UnorderedList>
+//          </HStack>
+//          <HStack alignItems="start">
+//          <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+//          <ListItem ><b>Explore collection</b></ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Top companies</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>IT companies</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Fintech companies</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Sponsored companies</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Featured companies</ListItem>
+  
+// </UnorderedList>
+//          </HStack>
+//          <HStack alignItems="start">
+//          <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+//          <ListItem ><b>Research companies</b></ListItem>
+//          <ListItem onClick={onClose} _hover={links}>Interview questions</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Company salaries</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Company reviews</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Salary Calculator</ListItem>
+  
+  
+// </UnorderedList>
+//          </HStack>
+//          <HStack alignItems="start">
+//          <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+//          <ListItem ><b>Explore more jobs</b></ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Jobs by category</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Jobs by skill</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Jobs by location</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Jobs by designation</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Create free job alert</ListItem>
+  
+// </UnorderedList>
+//          </HStack>
+//          </Flex>
+//       </Container>
+//     </PopoverBody>
+    
+    
+
+//   </PopoverContent>
+//   </>
+//         )}
+// </Popover>
+//         </Box>
+//         </MenuItem>
+
+//         <MenuItem to="#">
+//         <Box  p="20%">
+//         <Popover trigger="hover">
+//         {({ isOpen, onClose }) => (
+//          <>
+//   <PopoverTrigger>
+//     <Center><NavLink to="/services"><Text fontSize=".95rem" fontWeight="500" _hover={links}>Services </Text></NavLink></Center>
+//   </PopoverTrigger>
+//   <PopoverContent boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" width={{lg:"80%"}} fontWeight="500">
+//     <PopoverArrow />
+    
+    
+    
+//     <PopoverBody>
+//       <Container minW="1200px" alignItems="start">
+
+//      <Flex>
+//       <HStack alignItems="start" mr="40px" ml="-20px">
+      
+//          <UnorderedList listStyleType="none"  spacing={1.5} textAlign="left" >
+         
+//          <ListItem ><b>Resume writing</b></ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Text resume</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Visual resume</ListItem>
+//   <ListItem onClick={onClose}  _hover={links}>Resume critique</ListItem>
+//   <br></br>
+//   <ListItem ><b>Find Jobs</b></ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Jobs4u</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Priority applicant</ListItem>
+//   <ListItem onClick={onClose}  _hover={links}>Contact us</ListItem>
+ 
+  
+// </UnorderedList>
+//          </HStack>
+//          <HStack alignItems="start">
+//          <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+//          <ListItem ><b>Get recruiter's attention</b></ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Resume display</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Recruiter connection</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Job search booster</ListItem>
+//   <br></br>
+//   <ListItem ><b>Monthly subscriptions</b></ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Basic & premium plans</ListItem>
+  
+  
+// </UnorderedList>
+//          </HStack>
+//          <HStack alignItems="start">
+//          <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+//          <ListItem ><b>Research companies</b></ListItem>
+//          <ListItem onClick={onClose} _hover={links}>Interview questions</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Company salaries</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Company reviews</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Salary Calculator</ListItem>
+  
+  
+// </UnorderedList>
+//          </HStack>
+//          <HStack alignItems="start">
+//          <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+//          <ListItem ><b>Learn & upskill</b></ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Data Science courses</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Technology courses</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Management courses</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Finance courses</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Design courses</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Healthcare courses</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Degree programs</ListItem>
+  
+// </UnorderedList>
+//          </HStack>
+
+         
+//          <HStack alignItems="start">
+//          <UnorderedList listStyleType="none" spacing={1.5} textAlign="left" >
+//          <ListItem ><b>Free resume resources</b></ListItem>
+//          <ListItem onClick={onClose} _hover={links}>Resume maker for freshers</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Resume quality score</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Resume samples</ListItem>
+//   <ListItem onClick={onClose} _hover={links}>Job letter samples</ListItem>
+  
+  
+// </UnorderedList>
+//          </HStack>
+//          </Flex>
+//       </Container>
+//     </PopoverBody>
+    
+    
+
+//   </PopoverContent>
+//   </>
+//         )}
+// </Popover>
+//         </Box>
+//         </MenuItem>
+     
+     
+      
+//       </Stack>
+//     </Box>
+//   );
+// };
+
+// const MenuLinks = ({ isOpen }) => {
+    
+//   return (
+//     <Box
+//       display={{ base: isOpen ? "block" : "none", md: "block" }}
+//       flexBasis={{ base: "100%", md: "auto" }}
+//     >
+//       <Stack
+//         spacing={8}
+//         align="center"
+//         justify={["center", "space-between", "flex-end"]}
+//         direction={["column", "row"]}
+//         paddingTop={[4, 4, 0]}
+//         mr={{lg:"150px"}}
+//       >
+       
+     
+//         <MenuItem to="#">
+//             <NavLink to="/signin"><Button colorScheme='#457eff' variant='outline' borderRadius='md'>Login</Button></NavLink>
+//             </MenuItem>
+            
+//         <MenuItem to="#">
+//             <NavLink to="/signup"><Button colorScheme="red" variant='solid' borderRadius='md'>Register</Button></NavLink>
+//         </MenuItem>
+//         <MenuItem to="#">
+//         <Menu>
+//                     <MenuButton color={"black"}
+//                     as={Button} rightIcon={<ChevronDownIcon />}>
+//                         For Employers
+//                     </MenuButton>
+//                     <MenuList backgroundColor={"white"} color={"black"} align="center">
+//                         <MenuItem>Buy Online</MenuItem>
+//                        <MenuItem>Hiring Solutions</MenuItem>
+//                        <MenuItem>Employer Login</MenuItem>
+                        
+//                     </MenuList>
+//                 </Menu>
+      
+//        </MenuItem>
+//       </Stack>
+//     </Box>
+//   );
+// };
+
+// const NavBarContainer = ({ children }) => {
+//   return (
+//     <Flex
+//       as="nav"
+//       align="center"
+//       justify="space-between"
+//       wrap="wrap"
+//       width="100%"
+//       padding={1}
+      
+//       bg={"transparent"}
+//       color={"gray.600"}
+//       maxW="100%"
+//         boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
+//         position="sticky"
+//         top="0"
+//         zIndex="10"
+//         background="white"
+//     >
+//       {children}
+//     </Flex>
+//   );
+// };
+
+// function Navbar() {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const toggleMenu = () => setIsOpen(!isOpen);
+
+//   return (
+//     <NavBarContainer>
+//       <Logo  />
+//       <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
+//       <MenuLinks1 isOpen={isOpen}/>
+//       <MenuLinks isOpen={isOpen} />
+//     </NavBarContainer>
+    
+//   );
+// }
+
+// export default Navbar;
