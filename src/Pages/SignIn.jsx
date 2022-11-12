@@ -36,7 +36,7 @@ const SignIn = () => {
   }
   return (
     <>
-      <Button onClick={onOpen}>Login</Button>
+      <Button onClick={onOpen} colorScheme="blue" variant={"outline"}>Login</Button>
       <Drawer isOpen={isOpen} onClose={onClose} size="md">
         <DrawerOverlay />
         <DrawerContent>
@@ -59,7 +59,7 @@ const SignIn = () => {
                 <Box>
                 <FormLabel htmlFor='username'>Username</FormLabel>
               <Input 
-              placeholder='Enter your active Email ID / Username' 
+              placeholder='Enter your active Email ID ' 
               name="email"
          value={input.email}
       onChange={(e)=>setInput({...input,[e.target.name] : e.target.value})}

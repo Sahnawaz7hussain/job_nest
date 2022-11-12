@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { Image,Flex,Tooltip,Alert,AlertIcon,AlertTitle, Button,FormControl,Grid,GridItem,Heading,Input,Text,VStack,Box,Container,useDisclosure} from '@chakra-ui/react'
+import { Image,Flex, Button,FormControl,Grid,GridItem,Heading,Input,Text,VStack,Box,Container,useDisclosure} from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 import SignIn from './SignIn'
 // import { FaGoogle } from 'react-icons/fa'
@@ -46,9 +46,7 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
       <Flex ml={"10%"} mr="10%" justifyContent={"space-between"} align="center">
       <Image src={ProjectLogo}  />
       {/* <Spacer></Spacer> */}
-      <p  
-    
-      >Already Registered? <span color="blue"> Login </span> here</p>
+      <p>Already Registered? <span color="blue"> Login </span> here</p>
       </Flex>
 
       </Box>
