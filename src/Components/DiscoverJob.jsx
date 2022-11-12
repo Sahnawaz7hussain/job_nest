@@ -11,11 +11,19 @@ const DiscoverJob = () => {
     // console.log(items.ele)
   });
 
+
+//  pending
+PopularRolesData.map((items) => {
+    // console.log(items.ele)
+  })
+
+
   // PopularRolesData.map((items) => {
   //   console.log(items.ele)
   // })
 
   return (
+
     <Box as="div" className="discoverMainContainer">
       <Carousel cols={3} rows={1}>
         {PopularRolesData.map((items, index) => (

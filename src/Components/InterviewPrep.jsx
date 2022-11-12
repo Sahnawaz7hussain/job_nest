@@ -1,25 +1,32 @@
-import { Container ,Box, Heading,Image,Text,SimpleGrid} from '@chakra-ui/react'
+import { Container ,Box, Heading,Image,Text,SimpleGrid,useMediaQuery} from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 const InterviewPrep = () => {
+    const [isLargerThan600] = useMediaQuery('(min-width: 900px)')
     const roles=[
         {
+            id:1,
             title: 'Software Engineer',
             question:'(7.2K+ questions)'
         },{
+            id:2,
             title: 'Business Analyst',
             question:'(2.8K+ questions)'
         },{
+            id:3,
             title: 'Consultant',
             question:'(2.4K+ questions)'
         },{
+            id:4,
             title: 'Financial Analyst',
             question:'(894 questions)'
         },{
+            id:5,
             title: 'Sales & Marketing',
             question:'(911 questions)'
         },{
+            id:6,
             title: 'Quality Engineer',
             question:'(1.3K+ questions)'
         }
@@ -27,26 +34,32 @@ const InterviewPrep = () => {
 
     const inter=[
         {
+            id:1,
             title: 'Amazon',
             question:'1.7K+ Interviews',
             img:'https://static.naukimg.com/s/0/0/i/ambitionbox-comp/amazon.png'
         },{
+            id:2,
             title: 'TCS',
             question:'2.5K+ Interviews',
             img:'https://static.naukimg.com/s/0/0/i/ambitionbox-comp/tcs.png'
         },{
+            id:3,
             title: 'Byjus',
             question:'816 Interviews',
             img:'https://static.naukimg.com/s/0/0/i/ambitionbox-comp/byjus.png'
         },{
+            id:4,
             title: 'Accenture',
             question:'2.8K+ Interviews',
             img:'https://static.naukimg.com/s/0/0/i/ambitionbox-comp/accenture.png'
         },{
+            id:5,
             title: 'Cognizant',
             question:'1.6K+ Interviews',
             img:'https://static.naukimg.com/s/0/0/i/ambitionbox-comp/cognizant.png'
         },{
+            id:6,
             title: 'Flipkart',
             question:'488 Interviews',
             img:'https://static.naukimg.com/s/0/0/i/ambitionbox-comp/flipkart.png'
@@ -54,7 +67,7 @@ const InterviewPrep = () => {
     ]
   return (
     <div>
-        <Container marginTop='50px' maxW='1200px'  display='flex' justifyContent='space-evenly'>
+        <Container marginTop='50px' maxW='1200px'  display='flex' justifyContent='space-evenly' flexDir={isLargerThan600? "row":"column"}>
         <Box paddingTop='45px' w='250px'>
             <Heading size='lg'>Prepare for your next interview</Heading>
             <Image marginTop='15px' src='https://static.naukimg.com/s/0/0/i/ab-interview.png' alt='Interview' />
@@ -66,7 +79,7 @@ const InterviewPrep = () => {
           <SimpleGrid columns={2} spacingX='20px' spacingY='20px' paddingX='30px' marginTop='30px'>
 
             {inter.map((item)=>(
-                <Box boxShadow='rgba(100, 100, 111, 0.2) 0px 7px 29px 0px' borderRadius='10px' height='80px' display='flex' justifyContent='center' alignItems='center'>
+                <Box key={item.id} boxShadow='rgba(100, 100, 111, 0.2) 0px 7px 29px 0px' borderRadius='10px' height='80px' display='flex' justifyContent='center' alignItems='center'>
                 <Image border='1px solid #8292b4' borderRadius='10px' src={item.img} alt='amazon' width='50px' height='50px' />
                 <Box height='50px' lineHeight='1px'>
                 <Heading size='md'>{item.title}</Heading>
@@ -83,7 +96,7 @@ const InterviewPrep = () => {
         <Box w='350px' boxShadow='rgba(100, 100, 111, 0.2) 0px 7px 29px 0px' borderRadius='10px' paddingTop='20px' textAlign='center'>
         <Heading marginBottom='20px' size='md'>Interview questions by role</Heading>
         {roles.map((item)=>(
-            <Box margin='20px'>
+            <Box key={item.id} margin='20px'>
                   <Text margin='10px' fontSize='sm'>{item.title}  {item.question}</Text>
                   <hr/>
             </Box>
