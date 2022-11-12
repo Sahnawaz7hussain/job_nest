@@ -338,7 +338,7 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem to="#">
         <Flex gap="10">
       
-              <Text fontSize="25" fontWeight="extrabold" > {useName.name} </Text> 
+              {/* <Text fontSize="25" fontWeight="extrabold" > {useName.name} </Text>  */}
               <SignIn />
               
               </Flex>
