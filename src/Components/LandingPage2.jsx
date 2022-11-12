@@ -4,7 +4,7 @@ import React from "react";
 function LandingPage2 () {
 
     return <>
-    <Container minW="100%" border={"1px solid orange"} pt="20px">
+    <Container minW="100%" bgColor="#FFF" pt="20px" mt="20px">
 
         <HStack pb="5px" justify={"space-between"}>
             <Heading as="h3" color="#333333" fontSize="17px">What is most important to you when looking for a new job?</Heading>
