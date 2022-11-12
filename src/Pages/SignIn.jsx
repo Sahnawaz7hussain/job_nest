@@ -86,7 +86,7 @@ const SignIn = () => {
               <Text color="blue" align="end" fontSize={12}>Forgot Password ?</Text>
                 </Box>
                 <Box backgroundColor={"blue"} >
-                <Input type={"submit"} value="Login"  form='my-form' 
+                <Input color="white" type={"submit"} value="Login"  form='my-form' 
                 />
                 </Box>
                 <Box align="center">
