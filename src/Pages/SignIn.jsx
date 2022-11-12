@@ -7,7 +7,7 @@ import {
     DrawerContent,
     DrawerCloseButton,
     Button,Input,useDisclosure,Text,Flex,
-    FormLabel,Stack,Box,Spacer
+    FormLabel,Stack,Box
 
   } from '@chakra-ui/react'
   import {FcGoogle} from "react-icons/fc"
@@ -26,28 +26,32 @@ const SignIn = () => {
   let arr=JSON.parse(localStorage.getItem("signupData")) || []
   let flag=false
 
+   
   const handelLogin=(e)=>{
     e.preventDefault()
-    // console.log("martina")
+   
   
     if(arr.length>0 ){
       arr.filter((elem)=>{
         if(elem.email===input.email && elem.password===input.password){
-          // console.log(elem.email)
-          // alert("success")
-          flag=true
+         
           
+          flag=true
+          localStorage.setItem("loginData",JSON.stringify(elem))
           
         }
       })
      
     }
+
     if(flag){
       navigate("/user")
     }else{
       alert("wrong")
     }
+
    }
+  
   
   return (
     <>
