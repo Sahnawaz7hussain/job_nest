@@ -1,43 +1,52 @@
-import React from 'react';
-import Carousel from 'react-grid-carousel';
+import React from "react";
+import Carousel from "react-grid-carousel";
 import "../Styles/DiscoverJob.css";
-import { PopularRolesData } from '../Data/PopularRolesData';
-import { HiOutlineChevronRight } from "react-icons/hi"
+import { PopularRolesData } from "../Data/PopularRolesData";
+import { HiOutlineChevronRight } from "react-icons/hi";
+import { Box, Text } from "@chakra-ui/react";
 
 const DiscoverJob = () => {
+  //  pending
+  PopularRolesData.map((items) => {
+    // console.log(items.ele)
+  });
+
 
 //  pending
 PopularRolesData.map((items) => {
     // console.log(items.ele)
   })
 
+
   // PopularRolesData.map((items) => {
   //   console.log(items.ele)
   // })
 
   return (
-    <div className="discoverMainContainer">
-      <Carousel cols={1} rows={1}>
+
+    <Box as="div" className="discoverMainContainer">
+      <Carousel cols={3} rows={1}>
         {PopularRolesData.map((items, index) => (
-          <Carousel.Item key={index} >
-            <div className="discoverCards">
+          <Carousel.Item key={index}>
+            <Box className="discoverCards">
               {items.ele.map((element, index) => (
-                <div className="discoverSingleCard" key={index}>
-                  <div className="discoverRoles">
-                    <p className="discoverRolesName">{element.name}</p>
-                    <div>
-                      <p className="discoverRolesJob">{element.jobs}</p>
-                      <p><HiOutlineChevronRight /></p>
-                    </div>
-                  </div>
-                </div>
+                <Box className="discoverSingleCard" key={index}>
+                  <Box className="discoverRoles">
+                    <Text className="discoverRolesName">{element.name}</Text>
+                    <Box>
+                      <Text className="discoverRolesJob">{element.jobs}</Text>
+                      <Text>
+                        <HiOutlineChevronRight />
+                      </Text>
+                    </Box>
+                  </Box>
+                </Box>
               ))}
-            </div>
+            </Box>
           </Carousel.Item>
-        ))
-        }
+        ))}
       </Carousel>
-    </div>
-  )
-}
-export default DiscoverJob
+    </Box>
+  );
+};
+export default DiscoverJob;

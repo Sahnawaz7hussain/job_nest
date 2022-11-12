@@ -52,7 +52,7 @@ const Sidebar = () => {
     setSearchParams(params);
   }, [sector, setSearchParams, industry, locationFilter]);
 
-  console.log("sector", industry);
+  // console.log("sector", industry);
   return (
     <Box h="auto" w={"250px"}>
       <Box
