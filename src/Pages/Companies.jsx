@@ -6,12 +6,13 @@ import AdminNavbar from "../Components/Admin/AdminNavbar";
 import AdminRegister from "../Components/Admin/AdminRegister";
 import AllCompanies from "../Components/Companies/AllCompanies";
 import Sidebar from "../Components/Companies/Sidebar";
+import Navbar from "../Components/Navbar";
 import AdminRoutes from "./AdminRoutes";
-// import AdminRoutes from "./AdminRoutes";
 
 const Companies = () => {
   return (
     <Box>
+      <Navbar/>
       <Heading textAlign={"center"} my="40px" size={"lg"}>
         Featured companies actively hiring
       </Heading>

@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { Image,Flex, Button,FormControl,Grid,GridItem,Heading,Input,Text,VStack,Box,Container,useDisclosure} from '@chakra-ui/react'
-import { useNavigate,Navigate } from 'react-router-dom'
+import { useNavigate,Link} from 'react-router-dom'
 // import SignIn from './SignIn'
 // import { FaGoogle } from 'react-icons/fa'
 import {GiSchoolBag} from "react-icons/gi"
@@ -52,7 +52,10 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
       <Image src={ProjectLogo}  />
       {/* <Spacer></Spacer> */}
       
-      <p>Already Registered? <span color="blue"> Login </span> here</p>
+      <p>Already Registered? 
+        <Link to="/signin">
+       <Box as='span' color="blue"> Login </Box></Link>
+        here</p>
       </Flex>
 
       </Box>
