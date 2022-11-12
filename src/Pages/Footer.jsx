@@ -7,12 +7,12 @@ import Foot from "../assets/foot.png"
 const Footer = () => {
   return (
     <div >
-         <Divider borderWidth={"1px"} bg="gray" mt="5%"/>
+         <Divider borderWidth={"2px"} bg="gray" mt="5%"/>
        <Container  minW="90%" minH="80%" mt="2%" >
         
         <Flex justifyContent={"space-evenly"}   >
-            <Box   minW={"30%"}  >
-                <Image src={ProjectLogo} margin="auto" w="50%"  h="50%"/>
+            <Box   minW={"30%"}  mt="3%"  >
+                <Image src={ProjectLogo} margin="auto"w="30%"  h="20%"/>
                 <Text m="5%"align={"center"} fontSize="lg" >Connect with us</Text>
                 <Flex justifyContent={"space-evenly"} mr="-20%">
                     <Button mr="-10%" bg="white" >{<FaFacebookSquare size={30}/>}</Button>
@@ -44,8 +44,8 @@ const Footer = () => {
                 </Flex>
                
             </Box>
-            <Box  m="5%" alignItem="center" minW="30%" >
-                <Image src={Foot} /> 
+            <Box  m="4%" alignItem="center" minW="30%" >
+                <Image src={Foot} mt="-5"/> 
             </Box>
             
             

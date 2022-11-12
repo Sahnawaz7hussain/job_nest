@@ -23,17 +23,32 @@ const SignIn = () => {
     password:"",
     
   })
+  let arr=JSON.parse(localStorage.getItem("signupData")) || []
+  let flag=false
+
   const handelLogin=(e)=>{
-    e.preventdefault()
-    const loggeduser=JSON.parse(localStorage.getItem("user"))
-    if(input.email===loggeduser.email && input.password===loggeduser.password){
-      localStorage.setItem("loggedin",true)
-      navigate("/")
+    e.preventDefault()
+    // console.log("martina")
+  
+    if(arr.length>0 ){
+      arr.filter((elem)=>{
+        if(elem.email===input.email && elem.password===input.password){
+          // console.log(elem.email)
+          // alert("success")
+          flag=true
+          
+          
+        }
+      })
+     
     }
-    else{
-      alert("wrong credentials")
+    if(flag){
+      navigate("/user")
+    }else{
+      alert("wrong")
     }
-  }
+   }
+  
   return (
     <>
       <Button onClick={onOpen} colorScheme="blue" variant={"outline"}>Login</Button>
@@ -60,6 +75,7 @@ const SignIn = () => {
                 <FormLabel htmlFor='username'>Username</FormLabel>
               <Input 
               placeholder='Enter your active Email ID ' 
+              isRequired
               name="email"
          value={input.email}
       onChange={(e)=>setInput({...input,[e.target.name] : e.target.value})}
@@ -71,6 +87,7 @@ const SignIn = () => {
                 <FormLabel htmlFor='username'>Password</FormLabel>
                 <Flex>
                 <Input placeholder="Enter your password"
+                isRequired
               type={passType1?'password':'text'}
               name="password"
          value={input.password}
@@ -86,7 +103,7 @@ const SignIn = () => {
               <Text color="blue" align="end" fontSize={12}>Forgot Password ?</Text>
                 </Box>
                 <Box backgroundColor={"blue"} >
-                <Input color="white" type={"submit"} value="Login"  form='my-form' 
+                <Input color={"white"} type={"submit"} value="Login"  form='my-form' 
                 />
                 </Box>
                 <Box align="center">
