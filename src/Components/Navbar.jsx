@@ -315,7 +315,7 @@ const MenuLinks1 = ({ isOpen }) => {
 const MenuLinks = ({ isOpen }) => {
   
   // const navigate=useNavigate()
-  // const useName=JSON.parse(localStorage.getItem("signupData"))||""
+  const useName=JSON.parse(localStorage.getItem("signupData"))||""
   // // const handelLogout=()=>{
   // //  localStorage.removeItem("loggedin")
   // //  navigate("/")
@@ -340,7 +340,7 @@ const MenuLinks = ({ isOpen }) => {
         <MenuItem to="#">
         <Flex gap="10">
       
-              {/* <Text fontSize="25" fontWeight="extrabold" > {useName.name} </Text>  */}
+              <Text fontSize="25" fontWeight="extrabold" > {useName.name} </Text> 
               <SignIn />
               
               </Flex>
