@@ -8,6 +8,7 @@ import Standout from "../Components/Standout";
 import TypesOfJob from "../Components/TypesOfJob";
 import Navbar from "../Components/Navbar";
 import Footer from "./Footer";
+import MainFeaturedCompanies from "../Components/MainFeaturedCompanies";
 
 const Homepage = () => {
   return (
@@ -15,6 +16,7 @@ const Homepage = () => {
       <Navbar/>
       <Searchbar />
       <TypesOfJob />
+      <MainFeaturedCompanies />
       <InterviewPrep />
       <LearnMore />
       <Learning />
