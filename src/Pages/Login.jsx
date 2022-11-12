@@ -38,11 +38,11 @@ import { useNavigate } from 'react-router-dom'
         <Flex  w="100%" direction={{base:"column-reverse",lg:"row"}} justifyContent={"space-around"}>
         <Box mt="30px"   >
                   
-                  <Image  w="30%" src={Newto}  shadow={"base"} position="absolute" top={"20%"}/>
+                  <Image  w="30%" src={Newto}  shadow={"base"} position="absolute" top={"30%"}/>
                   
                   
                  
-                  <Button mt={{lg:"150%"}}  ml={{lg:"50%"}} colorScheme='blue' variant='outline'>Register for free</Button>
+                  <Button mt={{lg:"200%"}}  ml={{lg:"50%"}} colorScheme='blue' variant='outline'>Register for free</Button>
                   
               </Box>
               <Box  w="40%" boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" alignItems={"center"}>
