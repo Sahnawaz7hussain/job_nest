@@ -60,7 +60,7 @@ const MenuLinks1 = ({ isOpen }) => {
         {({ isOpen, onClose }) => (
          <>
   <PopoverTrigger>
-    <Center><NavLink to="/jobs"><Text fontSize=".95rem" fontWeight="500" _hover={links} align="center">Jobs </Text></NavLink></Center>
+    <Center><NavLink to="/user"><Text fontSize=".95rem" fontWeight="500" _hover={links} align="center">Jobs </Text></NavLink></Center>
   </PopoverTrigger>
   <PopoverContent m="auto" boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" width={{lg:"70%"}} fontWeight="500">
     <PopoverArrow />
