@@ -6,16 +6,20 @@ import LearnMore from "../Components/LearnMore";
 import Searchbar from "../Components/Searchbar";
 import Standout from "../Components/Standout";
 import TypesOfJob from "../Components/TypesOfJob";
+import Navbar from "../Components/Navbar";
+import Footer from "./Footer";
 
 const Homepage = () => {
   return (
     <Box as="div">
+      <Navbar/>
       <Searchbar />
       <TypesOfJob />
       <InterviewPrep />
       <LearnMore />
       <Learning />
       <Standout />
+      <Footer/>
     </Box>
   );
 };

@@ -33,7 +33,7 @@ import { useNavigate } from 'react-router-dom'
   return (
     <div>
       <Navbar/>
-      <Container  maxW={{base:"full" , lg:"container.xl"}}
+      <Container  mt="2%" maxW={{base:"full" , lg:"container.xl"}}
       p={{base:3,lg:2}}>
         <Flex  w="100%" direction={{base:"column-reverse",lg:"row"}} justifyContent={"space-around"}>
         <Box mt="30px"   >
