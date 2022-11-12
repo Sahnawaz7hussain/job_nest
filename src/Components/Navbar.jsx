@@ -7,7 +7,7 @@ import ProjectLogo from "../assets/projectlogo.png"
 import {  NavLink } from "react-router-dom";
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import SignIn from "../Pages/SignIn";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const Logo = () => {
     
@@ -137,7 +137,7 @@ const MenuLinks1 = ({ isOpen }) => {
         {({ isOpen, onClose }) => (
          <>
   <PopoverTrigger>
-    <Center>,<NavLink to="/companies"><Text fontSize=".95rem" fontWeight="500" _hover={links}>Companies </Text></NavLink></Center>
+    <Center><NavLink to="/companies"><Text fontSize=".95rem" fontWeight="500" _hover={links}>Companies </Text></NavLink></Center>
   </PopoverTrigger>
   <PopoverContent boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" width={{lg:"60%"}} fontWeight="500">
     <PopoverArrow />
@@ -313,12 +313,12 @@ const MenuLinks1 = ({ isOpen }) => {
 
 const MenuLinks = ({ isOpen }) => {
   
-  const navigate=useNavigate()
-  const useName=JSON.parse(localStorage.getItem("user"))||""
-  const handelLogout=()=>{
-   localStorage.removeItem("loggedin")
-   navigate("/")
-  }
+  // const navigate=useNavigate()
+  // const useName=JSON.parse(localStorage.getItem("user"))||""
+  // const handelLogout=()=>{
+  //  localStorage.removeItem("loggedin")
+  //  navigate("/")
+  // }
     
   return (
     <Box
@@ -357,9 +357,9 @@ const MenuLinks = ({ isOpen }) => {
                         <MenuItem>Buy Online</MenuItem>
                        <MenuItem>Hiring Solutions</MenuItem>
                        <MenuItem>Employer Login</MenuItem>
-                       <MenuItem>
+                       {/* <MenuItem>
                         <Button onClick={handelLogout}>LOGOUT</Button>
-                        </MenuItem>
+                        </MenuItem> */}
                     </MenuList>
                 </Menu>
       
