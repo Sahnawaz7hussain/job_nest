@@ -6,17 +6,18 @@ import LandingPage3 from "../Components/LandingPage3";
 import LandingPage4 from "../Components/LandingPage4";
 import LandingPage5 from "../Components/LandingPage5";
 import LandingPage6 from "../Components/LandingPage6";
+import UserProfile from "../Components/UserProfile";
+import UserProfile2 from "../Components/UserProfile2";
 
 function LandingPage () {
 
     return <>
 
-
     <Landingpage1 />
 
-    <Container minW="100%" bgColor={""}>
+    <Container minW="100%" bgColor={"#D3D3D3"}>
 
-      <Container minW="67.5%" border={"1px solid red"} m="auto" mt="20px">
+      <Container minW="67.5%" m="auto" >
 
         <HStack w="full" alignItems={"start"}>
 
@@ -27,7 +28,7 @@ function LandingPage () {
             <LandingPage3 />
             <Container></Container>
             <LandingPage4 />
-            <Box alignSelf="start"><Heading as="h3" fontSize="22px" color={"#666666"} mt="40px">Recruiters</Heading></Box>
+            <Box alignSelf="start"><Heading as="h3" fontSize="22px" color={"#666666"} mt="30px">Recruiters</Heading></Box>
             <LandingPage5 />
             <Container></Container>
             <LandingPage6 />
@@ -35,7 +36,13 @@ function LandingPage () {
 
         </VStack>
 
-        <VStack w="32%" border={"1px solid black"} height="200px"></VStack>  
+        <VStack w="32%">
+
+           <UserProfile />
+
+           <Container></Container>
+           <UserProfile2 />
+        </VStack>  
             
         </HStack>
 

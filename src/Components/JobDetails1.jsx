@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { Box, Button, Container, Heading, HStack, Image, Stack, Text, VStack } from "@chakra-ui/react";
+import { useNavigate, useParams } from "react-router-dom";
+import { Box, Button, Container, Heading, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import { getSingleJobDetails } from "../Redux/AppReducer/action";
 import { StarIcon } from "@chakra-ui/icons";
 import wallet from "../assets/wallet.png"
@@ -13,7 +13,12 @@ function JobDetails1 () {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.companies)
 
-    const hoverEffect = {cursor:"pointer"}
+    const hoverEffect = {cursor:"pointer", color:"#4A90E2"}
+
+    const [text, setText] = useState("APPLY")
+    const [text1, setText1] = useState("Save")
+
+    const navigate = useNavigate()
 
    
 
@@ -22,8 +27,27 @@ function JobDetails1 () {
         dispatch(getSingleJobDetails(Number(id.id)))
     },[Number(id.id)])
 
-    if(data.length===1){
-        console.log(data)
+   
+    const handleClick = () => {
+
+        if(text=="APPLY"){
+            setText("APPLIED")
+            alert("You Applied for this Job")
+            navigate("/user")
+        }
+    }
+
+
+    const handleClick1 = () => {
+
+        if(text1=="Save"){
+            setText1("Saved")
+            alert("Job Saved in Your Profile")
+        }
+        else{
+            setText1("Save")
+            alert("Job Removed in Your Profile")
+        }
     }
 
     return <>
@@ -31,7 +55,7 @@ function JobDetails1 () {
 
      {data.length===1 && data.map((elem) => (
 
-        <Container minW="100%" border="1px solid blue" mt="-45px" key={elem.id}>
+        <Container minW="100%" bgColor="#FFF" boxShadow={"md"} rounded='md' mt="-45px" key={elem.id}>
 
             <HStack minW="100%" borderBottom="1px solid gray" pb="8px">
 
@@ -41,8 +65,8 @@ function JobDetails1 () {
                 <Box mb="-4px"><Heading fontSize="20px" color="#333333">{elem.title}</Heading></Box>
 
                 <HStack fontWeight="500">
-                    <Box fontSize="13px" color="#333333">{elem.companies}</Box>
-                    <HStack fontSize="12px"><Text color="#414B5D" ml="15px">{elem.rating}</Text><StarIcon color="orange" /><Text>(2 Reviews)</Text></HStack>
+                    <Box fontSize="13px" color="#333333" _hover={hoverEffect}>{elem.companies}</Box>
+                    <HStack fontSize="12px" _hover={hoverEffect}><Text ml="15px">{elem.rating}</Text><StarIcon color="orange" /><Text>(2 Reviews)</Text></HStack>
                 </HStack>
 
                 <HStack fontWeight="500">
@@ -57,7 +81,7 @@ function JobDetails1 () {
 
             <HStack fontWeight="500">
                 <Box w="16px"><Image src="https://i.ibb.co/k21hg19/location.png" alt="location" /></Box>
-                <Box><Text fontSize={"13px"} color="#666666">{elem.location}</Text></Box>
+                <Box><Text fontSize={"13px"}  _hover={hoverEffect} color="#666666">{elem.location}</Text></Box>
             </HStack>
 
             </VStack>
@@ -65,8 +89,13 @@ function JobDetails1 () {
 
             <VStack w="27%" pt="100px">
                 <HStack justifyContent="space-between" w="100%">
-                    <Button borderRadius="3px" p="0px 26px" h="37px" color="#4A90E2" fontSize="14px" border="1px solid #4A90E2" bgColor="#FFF">Save</Button>
-                    <Button borderRadius="3px" p="0px 32px" h="40px" bgColor="#4A90E2" fontSize="14px" color="#FFF" _hover={""}>APPLY</Button>
+
+                    <Button borderRadius="3px" p="0px 26px" h="37px" color="#4A90E2"
+                     fontSize="14px" border="1px solid #4A90E2" bgColor="#FFF" onClick={handleClick1}>{text1}</Button>
+
+                    <Button borderRadius="3px" p="0px 32px" h="40px" bgColor="#4A90E2" 
+                    fontSize="14px" color="#FFF" _hover={{bgColor:"#609DE6"}} onClick={handleClick} >{text}</Button>
+
                 </HStack>
             </VStack>
         </HStack>
@@ -84,7 +113,7 @@ function JobDetails1 () {
                 </HStack>
             </HStack>
 
-            <Box><Heading fontSize="14px" color="#4A90E2" _hover={hoverEffect}>Send Me Jobs Like This</Heading></Box>
+            <Box pb="12px"><Heading fontSize="14px" color="#4A90E2" _hover={hoverEffect}>Send Me Jobs Like This</Heading></Box>
         </HStack>
 
         </Container>
