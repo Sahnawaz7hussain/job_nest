@@ -24,3 +24,25 @@ export const getCompniesActionFn =
         dispatch(getCompniesFailure(err));
       });
   };
+
+const postNewCompanyRequest = () => {
+  return { type: types.POST_COMPNIES_REQUEST };
+};
+const postNewCompanySuccess = (payload) => {
+  return { type: types.POST_COMPNIES_SUCCESS, payload };
+};
+const postNewCompanyFailure = () => {
+  return { type: types.POST_COMPNIES_FAILURE };
+};
+
+export const postNewCompanyActionFn = (payload) => (dispatch) => {
+  dispatch(postNewCompanyRequest());
+  return axios
+    .post("https://fake-api-bytv.onrender.com/api/companies", payload)
+    .then((r) => {
+      return dispatch(postNewCompanySuccess(r.data));
+    })
+    .catch((e) => {
+      return dispatch(postNewCompanyFailure(e));
+    });
+};

@@ -30,7 +30,7 @@ const Companies = () => {
       <br />
       <br />
       <br />
-      {/* <AdminRegister /> */}
+      <AdminRegister />
       <AdminLogin />
       {/* <AdminNavbar /> */}
       {/* <AdminRoutes /> */}
