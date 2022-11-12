@@ -6,13 +6,14 @@ import LandingPage from "./LandingPage";
 import Servicespage from "./Servicespage";
 import SingleCompany from "./SingleCompany";
 import Signup from "./Signup";
+import Login from "./Login";
 
 const MainRoute = () => {
   return (
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/signin" element={<h1>LoginPage will invode here</h1>} />
+      <Route path="/signin" element={<Login/>} />
 
       <Route path="/userpage" element={<LandingPage />} />
 
