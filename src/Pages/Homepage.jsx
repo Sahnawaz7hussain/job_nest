@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
+import DiscoverJob from "../Components/DiscoverJob";
 import InterviewPrep from "../Components/InterviewPrep";
 import Learning from "../Components/Learning";
 import LearnMore from "../Components/LearnMore";
