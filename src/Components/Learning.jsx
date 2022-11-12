@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container ,Box, Heading,Image,Text} from '@chakra-ui/react';
+import { Container ,Box, Heading,Image,Text,useMediaQuery} from '@chakra-ui/react';
 
 const Learning = () => {
+    const [isLargerThan600] = useMediaQuery('(min-width: 900px)')
     let learn=[
         {
             id:1,
@@ -28,7 +29,7 @@ const Learning = () => {
     ]
   return (
     <div>
-        <Container marginTop='50px' maxW='1300px'  display='flex' justifyContent='space-evenly'>
+        <Container marginTop='50px' maxW='1300px'  display='flex' justifyContent='space-evenly' flexDir={isLargerThan600? "row":"column"}>
         <Box paddingTop='45px' w='250px'>
             <Heading size='lg'>Grow your career through learning</Heading>
             <Image marginTop='15px' src='https://static.naukimg.com/s/0/0/i/learn-icon.svg' alt='Interview' />
@@ -36,7 +37,7 @@ const Learning = () => {
 
 
        {learn.map((item)=>(
-          <Box w='300px' padding='15px' border='1px solid #d3e1ea'  borderRadius='10px' paddingTop='20px' textAlign='left'>
+          <Box key={item.id} w='300px' padding='15px' border='1px solid #d3e1ea'  borderRadius='10px' paddingTop='20px' textAlign='left'>
           <Text fontSize='sm' color='#435678' marginTop='5px' fontWeight='bold'>{item.sub}</Text>   
           <Heading size='md' marginTop='5px'>{item.top}</Heading>
           <Text fontSize='sm' color='#8292b4' fontWeight='bold' marginTop='10px'>{item.des}</Text>   
