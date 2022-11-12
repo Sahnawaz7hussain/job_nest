@@ -24,14 +24,14 @@ import { useNavigate ,Link} from 'react-router-dom'
 
       const handelLogin=(e)=>{
         e.preventDefault()
-        // console.log("martina")
+        
       
         if(arr.length>0 ){
           arr.filter((elem)=>{
             if(elem.email===input.email && elem.password===input.password){
-              // console.log(elem.email)
-              // alert("success")
+
               flag=true
+              localStorage.setItem("loginData",JSON.stringify(elem))
               
               
             }
@@ -40,11 +40,13 @@ import { useNavigate ,Link} from 'react-router-dom'
         }
         if(flag){
           navigate("/user")
-        }else{
+        }
+
+      else{
           alert("wrong")
         }
-       }
-      
+
+        }
   return (
     <div>
       <Navbar/>
