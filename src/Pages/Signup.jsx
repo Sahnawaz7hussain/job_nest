@@ -27,7 +27,7 @@ const Signup = () => {
 	const handelSubmit=(e)=>{
     e.preventDefault()
     localStorage.setItem("user",JSON.stringify(input))
-    navigate(<SignIn/>)
+    navigate("/signin")
    
   }
 
