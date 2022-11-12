@@ -1,10 +1,11 @@
 import React from 'react';
-import { Container ,Box, Heading,Image,Text,Button} from '@chakra-ui/react';
+import { Container ,Box, Heading,Image,Text,Button,useMediaQuery} from '@chakra-ui/react';
 
 const LearnMore = () => {
+  const [isLargerThan600] = useMediaQuery('(min-width: 900px)')
   return (
     <div>
-          <Container paddingBottom='20px' marginTop='50px' maxW='1100px'  display='flex' justifyContent='space-evenly' boxShadow='rgba(100, 100, 111, 0.2) 0px 7px 29px 0px' borderRadius='10px'>
+          <Container paddingBottom='20px' marginTop='50px' maxW={isLargerThan600? "1100px":"600px"}  display='flex' flexDir={isLargerThan600? "row":"column"} justifyContent='space-evenly' boxShadow='rgba(100, 100, 111, 0.2) 0px 7px 29px 0px' borderRadius='10px'>
         <Box paddingTop='45px' w='250px' >
             <Image margin='15px' src='https://static.naukimg.com/s/0/0/i/ff-services.png' alt='Interview' />
         </Box>
