@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { Image,Flex, Button,FormControl,Grid,GridItem,Heading,Input,Text,VStack,Box,Container,useDisclosure} from '@chakra-ui/react'
-import { useNavigate,Link} from 'react-router-dom'
+import { useNavigate,Link,NavLink} from 'react-router-dom'
 // import SignIn from './SignIn'
 // import { FaGoogle } from 'react-icons/fa'
 import {GiSchoolBag} from "react-icons/gi"
@@ -49,7 +49,8 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
         boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" p="5">
           
       <Flex ml={"10%"} mr="10%" justifyContent={"space-between"} align="center">
-      <Image src={ProjectLogo}  />
+        
+      <Link to="/"><Image  src={ProjectLogo} /></Link>
       {/* <Spacer></Spacer> */}
       
       <p>Already Registered? 

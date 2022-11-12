@@ -11,7 +11,7 @@ import {
 
   } from '@chakra-ui/react'
   import {FcGoogle} from "react-icons/fc"
-  import { useNavigate } from 'react-router-dom'
+  import { useNavigate ,Link} from 'react-router-dom'
 
 const SignIn = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -59,7 +59,8 @@ const SignIn = () => {
           <DrawerHeader p={10}>
                 <Flex justifyContent={"space-between"}>
                     <Text fontSize={"30"}>Login</Text>
-                    <Text fontSize={"18"}  p="2" color="blue">Register for free</Text>
+                    
+                    <Link to="/signup"><Text  fontSize={"18"}  p="2" color="blue">Register for free</Text></Link>
                 </Flex>
 
           </DrawerHeader>

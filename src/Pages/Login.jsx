@@ -4,7 +4,7 @@ Stack,FormLabel,Input,Text ,useDisclosure} from "@chakra-ui/react"
 import Navbar from '../Components/Navbar'
 import Newto from "../assets/newto.png"
 import { FcGoogle } from 'react-icons/fc'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate ,Link} from 'react-router-dom'
 
    
 
@@ -57,7 +57,7 @@ import { useNavigate } from 'react-router-dom'
                   
                   
                  
-                  <Button mt={{lg:"200%"}}  ml={{lg:"50%"}} colorScheme='blue' variant='outline'>Register for free</Button>
+                 <Link to="/signup"> <Button mt={{lg:"200%"}}  ml={{lg:"50%"}} colorScheme='blue' variant='outline'>Register for free</Button></Link>
                   
               </Box>
               <Box  w="40%" boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" alignItems={"center"}>
