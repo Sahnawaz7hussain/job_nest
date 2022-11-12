@@ -18,18 +18,33 @@ import { useNavigate } from 'react-router-dom'
         password:"",
         
       })
+
+      let arr=JSON.parse(localStorage.getItem("signupData")) || []
+      let flag=false
+
       const handelLogin=(e)=>{
-        e.preventdefault()
-        const loggeduser=JSON.parse(localStorage.getItem("user"))
-        if(input.email===loggeduser.email && input.password===loggeduser.password){
-          localStorage.setItem("loggedin",true)
-          alert("success")
-          navigate("/")
+        e.preventDefault()
+        // console.log("martina")
+      
+        if(arr.length>0 ){
+          arr.filter((elem)=>{
+            if(elem.email===input.email && elem.password===input.password){
+              // console.log(elem.email)
+              // alert("success")
+              flag=true
+              
+              
+            }
+          })
+         
         }
-        else{
-          alert("Wrong Email or Password")
+        if(flag){
+          navigate("/user")
+        }else{
+          alert("wrong")
         }
-      }
+       }
+      
   return (
     <div>
       <Navbar/>
@@ -46,6 +61,8 @@ import { useNavigate } from 'react-router-dom'
                   
               </Box>
               <Box  w="40%" boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" alignItems={"center"}>
+
+                
               <form
              
              onSubmit={handelLogin}
@@ -54,7 +71,8 @@ import { useNavigate } from 'react-router-dom'
                 <Box>
                 <FormLabel htmlFor='username'>Email</FormLabel>
               <Input 
-              placeholder='Enter your active Email ID / Username' 
+              placeholder='Enter your active Email ID ' 
+              isRequired
               name="email"
          value={input.email}
       onChange={(e)=>setInput({...input,[e.target.name] : e.target.value})}
@@ -66,6 +84,7 @@ import { useNavigate } from 'react-router-dom'
                 <FormLabel htmlFor='username'>Password</FormLabel>
                 <Flex>
                 <Input placeholder="Enter your password"
+                isRequired
               type={passType1?'password':'text'}
               name="password"
          value={input.password}
@@ -81,7 +100,7 @@ import { useNavigate } from 'react-router-dom'
               <Text color="blue" align="end" fontSize={12}>Forgot Password ?</Text>
                 </Box>
                 <Box backgroundColor={"blue"} >
-                <Input type={"submit"} value="Login"  color="white"
+                <Input  type={"submit"} value="Login"  color="white"
                 />
                 </Box>
                 <Box align="center">
