@@ -15,7 +15,7 @@ const Logo = () => {
     
     <Box >
         
-            <NavLink to="/"> <Image src={ProjectLogo} ml={{lg:"150px"}} /></NavLink>
+            <NavLink to="/"> <Image src={ProjectLogo} ml={{lg:"150px"}} w="100px" alt="logo"/></NavLink>
     </Box>
     
   );
@@ -377,8 +377,10 @@ const NavBarContainer = ({ children }) => {
       as="nav"
       align="center"
       justify="space-between"
-      wrap="wrap"
-      width="100%"
+      // wrap="wrap"
+      // width="100%"
+      // overflowX={"hidden"}
+      boxSizing="border-box"
       padding={1}
       // border="1px solid red"
       bg={"transparent"}

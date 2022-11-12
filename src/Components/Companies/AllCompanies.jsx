@@ -13,6 +13,7 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { getCompniesActionFn } from "../../Redux/AppReducer/action";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 
+
 const AllCompanies = () => {
   const dispatch = useDispatch();
   const location = useLocation();
@@ -43,6 +44,7 @@ const AllCompanies = () => {
   }, [location.search, dispatch, searchParams]);
   console.log("locationn:::", location);
   return (
+
     <Box
       h={"auto"}
       w="70%"
@@ -52,6 +54,7 @@ const AllCompanies = () => {
       // background="antiquewhite"
       border={"0px solid red"}
     >
+      
       <Text fontSize={"19px"} color="blackAlpha.700" fontWeight={"700"}>
         Showing companies ({companies.length})
       </Text>

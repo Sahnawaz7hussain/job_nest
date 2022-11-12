@@ -12,7 +12,9 @@ const Footer = () => {
         
         <Flex justifyContent={"space-evenly"}   >
             <Box   minW={"30%"}  mt="3%"  >
-                <Image src={ProjectLogo} margin="auto"w="30%"  h="20%"/>
+                <Image src={ProjectLogo} margin="auto"
+                w="30%"  h="20%"
+                alt="logo2"/>
                 <Text m="5%"align={"center"} fontSize="lg" >Connect with us</Text>
                 <Flex justifyContent={"space-evenly"} mr="-20%">
                     <Button mr="-10%" bg="white" >{<FaFacebookSquare size={30}/>}</Button>
@@ -56,7 +58,7 @@ const Footer = () => {
 
        <Container minW="90%" minH="80%" borderTop={"1px solid grey"}>
     <Flex justifyContent={"space-between"} p="5">
-        <Image src="https://static.naukimg.com/s/0/0/i/new-homepage/infoedge-logo.svg"/>
+        <Image src="https://static.naukimg.com/s/0/0/i/new-homepage/infoedge-logo.svg" alt="f"/>
         <Box fontSize={"70%"}>
             <Text>All trademarks are the property of their respective owners</Text>
             <Text>All rights reserved © 2022 Info Edge (India) Ltd.</Text>

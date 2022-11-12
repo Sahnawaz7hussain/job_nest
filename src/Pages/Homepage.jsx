@@ -19,7 +19,7 @@ const Homepage = () => {
       <LearnMore />
       <Learning />
       <Standout />
-      <Footer/>
+      {/* <Footer/> */}
     </Box>
   );
 };
