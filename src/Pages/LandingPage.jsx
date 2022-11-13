@@ -8,10 +8,16 @@ import LandingPage5 from "../Components/LandingPage5";
 import LandingPage6 from "../Components/LandingPage6";
 import UserProfile from "../Components/UserProfile";
 import UserProfile2 from "../Components/UserProfile2";
+import UserNavbar from "../Components/UserNavbar";
+import ProfileSection from "../Components/ProfileSection"
 
 function LandingPage () {
 
     return <>
+
+    
+
+    <UserNavbar />
 
     <Landingpage1 />
 

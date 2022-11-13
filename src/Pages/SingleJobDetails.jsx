@@ -7,14 +7,17 @@ import JobDetailsV1 from "../Components/JobDetailsV1";
 import JobDetailsV2 from "../Components/JobDetailsV2";
 import JobDetailsV3 from "../Components/JobDetailsV3";
 import JobsDetailsV4 from "../Components/JobsDetailsV4";
+import UserNavbar from "../Components/UserNavbar";
 
 function SingleJobDetails () {
 
     
 
     return <>
+    
+    <UserNavbar />
 
-    <Stack minW="100%" h="87px" bgColor="#D4E5FF" mt="72px"></Stack> 
+    <Stack minW="100%" h="87px" bgColor="#D4E5FF"></Stack> 
 
     <Container minW="100%" bgColor={"#DFE6ED"}>
 
