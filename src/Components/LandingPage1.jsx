@@ -5,7 +5,7 @@ import { Box, Button, Container, HStack, Input, Stack, Text } from "@chakra-ui/r
 function Landingpage1 () {
 
     return  <>
-    <Container minW="100%" mt="72px">
+    <Container minW="100%">
        <Box
        ml="-18px"
        w="102.38%"
