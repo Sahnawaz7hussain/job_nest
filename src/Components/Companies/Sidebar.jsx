@@ -115,8 +115,8 @@ const Sidebar = () => {
           </Checkbox>
           <Checkbox
             onChange={handleIndustryOnChange}
-            value={"itservices&onsulting"}
-            defaultChecked={industry.includes("itservices&onsulting")}
+            value={"itservicesandconsulting"}
+            defaultChecked={industry.includes("itservicesandconsulting")}
           >
             <Text fontSize={"14px"}>IT Services & Consulting</Text>
           </Checkbox>

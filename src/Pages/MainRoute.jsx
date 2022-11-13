@@ -9,15 +9,19 @@ import Signup from "./Signup";
 import RecommendedJobs from "./RecommendedJobs";
 import SingleJobDetails from "./SingleJobDetails";
 import Login from "./Login";
+import AdminRegister from "../Components/Admin/AdminRegister";
+import AdminLogin from "../Components/Admin/AdminLogin";
+import AdminJobPost from "../Components/Admin/AdminJobPost";
+import AdminPostedJobs from "../Components/Admin/AdminPostedJobs";
 
 const MainRoute = () => {
   return (
     <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/signin" element={<Login/>} />
+      <Route path="/signin" element={<Login />} />
 
-      <Route path="/user" element={<LandingPage />}/>
+      <Route path="/user" element={<LandingPage />} />
       <Route path="/user/recommendedjobs" element={<RecommendedJobs />} />
       <Route path="/user/recommendedjobs/:id" element={<SingleJobDetails />} />
 
@@ -25,6 +29,11 @@ const MainRoute = () => {
 
       <Route path="/companies" element={<Companies />} />
       <Route path="/singlecompany/:id" element={<SingleCompany />} />
+
+      <Route path="/admin/" element={<AdminLogin />} />
+      <Route path="/admin/register" element={<AdminRegister />} />
+      <Route path="/admin/postjob" element={<AdminJobPost />} />
+      <Route path="/admin/jobs" element={<AdminPostedJobs />} />
     </Routes>
   );
 };
