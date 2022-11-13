@@ -4,15 +4,18 @@ import React from "react";
 
 function UserProfile () {
 
+    let userData = JSON.parse(localStorage.getItem("loginData")) || {};
+
+
     return <>
 
-    <Container minW="100%" bgColor="#FFF" mt="-175px" zIndex={4}>
+    <Container minW="100%" bgColor="#FFF" boxShadow={"md"} rounded='md' mt="-175px" zIndex={1}>
 
         <Center _hover={{cursor:"pointer"}}>
         <Box boxSize="60px"><Image  src="https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png" alt="" /></Box>
         </Center>
 
-        <Center mt="10px"><Box _hover={{cursor:"pointer"}}><Heading fontSize="20px">Amit Kumar Saini</Heading></Box></Center>
+        <Center mt="10px"><Box _hover={{cursor:"pointer"}}><Heading fontSize="20px">{userData.name ? `${userData.name}`: ""}</Heading></Box></Center>
             <VStack>
                 
             <Box mt="7px" mb="15px"  fontSize="13px" color="#666666" fontWeight="500" p="0px 22px" _hover={{cursor:"pointer"}}>

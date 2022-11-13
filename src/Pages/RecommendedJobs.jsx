@@ -3,14 +3,17 @@ import { Box, Container, Heading, HStack, VStack } from "@chakra-ui/react";
 import RecomJobs from "../Components/RecomJobs";
 import RecomJobsV1 from "../Components/RecomJobsV1";
 import RecomJobsV2 from "../Components/RecomJobsV2";
+import UserNavbar from "../Components/UserNavbar";
 
 function RecommendedJobs () {
 
     return <>
-    
-    <Container minW="100%" bgColor={"#DFE6ED"} mt="178px">
 
-      <Container minW="88.5%" m="auto" mt="20px" mb="30px">
+    <UserNavbar />
+    
+    <Container minW="100%" bgColor={"#DFE6ED"}>
+
+      <Container minW="88.5%" m="auto" mb="30px">
 
         <HStack w="full" alignItems={"start"}>
 
