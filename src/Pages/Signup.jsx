@@ -64,7 +64,7 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
 
       <Flex >
         <Box mt={-40} position="fixed">
-          <Image src={Regimage} margin={"50%"}  w="70%" />
+          <Image src={Regimage} margin={"50%"} pt="10%" w="70%" />
         </Box>
         <Box w="40%" margin="auto">
 
@@ -230,28 +230,3 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
 }
 
 export default Signup
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
