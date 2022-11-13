@@ -53,10 +53,10 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
       <Link to="/"><Image  src={ProjectLogo} /></Link>
       {/* <Spacer></Spacer> */}
       
-      <p>Already Registered? 
+      <Text as={"p"}>Already Registered? 
         <Link to="/signin">
        <Box as='span' color="blue"> Login </Box></Link>
-        here</p>
+        here</Text>
       </Flex>
 
       </Box>
@@ -64,7 +64,7 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
 
       <Flex >
         <Box mt={-40} position="fixed">
-          <Image src={Regimage} margin={"50%"}  w="70%" />
+          <Image src={Regimage} margin={"50%"} pt="10%" w="70%" />
         </Box>
         <Box w="40%" margin="auto">
 
@@ -175,9 +175,9 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
  
  <GridItem colSpan={{base:2 , md:2}} >
     
-     <p >By clicking Register, you agree to the Terms and Conditions & Privacy Policy of JobNest.in</p>
+     <Text as={"p"} fontSize="12px">By clicking Register, you agree to the Terms and Conditions & Privacy Policy of JobNest.in</Text>
      
-     <Input  type="submit" w="full" value={"Register"}></Input>
+     <Input bg="blue.200" _hover={{bg:"blue"}} mt="4" color="white" type="submit" w="50%" value={"Register"}></Input>
      
          
      
@@ -212,7 +212,7 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
 
 
 
-<Flex justifyContent={"space-between"} w="25%" m="auto" fontSize={"10"} >
+<Flex justifyContent={"space-between"} color="blue" w="35%" m="auto" fontSize={"12"} >
   <Text >About  |</Text>
   <Text>Contact Us |</Text>
   <Text>FAQs |</Text>
@@ -220,7 +220,7 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
   <Text>RePort a Problem |</Text>
   <Text>Privacy Policy </Text>
 </Flex>
-<Text w="30%" m="auto" ml="45%" fontSize={"10"}>All rights reserved © 2022 Info Edge India Ltd.</Text>
+<Text w="30%" m="auto" mb="10%" ml="45%" fontSize={"10"}>All rights reserved © 2022 Info Edge India Ltd.</Text>
 
 
     </>
@@ -230,28 +230,3 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
 }
 
 export default Signup
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
