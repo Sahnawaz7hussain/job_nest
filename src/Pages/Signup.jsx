@@ -177,7 +177,7 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
     
      <Text as={"p"} fontSize="12px">By clicking Register, you agree to the Terms and Conditions & Privacy Policy of JobNest.in</Text>
      
-     <Input  type="submit" w="full" value={"Register"}></Input>
+     <Input bg="blue.200" _hover={{bg:"blue"}} mt="4" color="white" type="submit" w="50%" value={"Register"}></Input>
      
          
      
