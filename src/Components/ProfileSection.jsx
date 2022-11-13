@@ -18,6 +18,7 @@ import { QuestionOutlineIcon, SettingsIcon } from '@chakra-ui/icons'
   let userData = JSON.parse(localStorage.getItem("loginData")) || {};
 
   const logoutFunc = () => {
+    localStorage.setItem("loginData", JSON.stringify(""))
     navigate("/")
   }
   

@@ -38,9 +38,10 @@ const AdminNavbar = () => {
       top="0"
       bg="#fff"
       zIndex={"2000"}
+      paddingY={["15px"]}
     >
       <Flex alignItems={"center"}>
-        <Image src={projectlogo} alt="Job Nest" />
+        <Link to="/"><Image src={projectlogo} alt="Job Nest" /></Link>
         <Spacer />
         <HStack spacing={"18px"} display="flex">
           <Link to="/admin/postjob">
@@ -56,9 +57,9 @@ const AdminNavbar = () => {
             </Text>
           </Link>
           {adminLoginData.isAuth ? (
-            <Link to="/admin/jobs">
+            
               <Text>Posted Jobs</Text>
-            </Link>
+          
           ) : (
             <Link to="/admin">
               <Button

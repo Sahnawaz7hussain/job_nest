@@ -13,7 +13,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import projectlogo from "../../assets/projectlogo.png";
-import Footer from "../../Pages/Footer";
+import Footer from "../Footer";
 import { postNewCompanyActionFn } from "../../Redux/AppReducer/action";
 import { getLocalStorageData, saveToLocalStorage } from "../../utils/localData";
 import AdminNavbar from "./AdminNavbar";
@@ -134,7 +134,6 @@ const AdminLogin = () => {
             </Link>{" "}
           </Text>
         </Box>
-        ;
       </Container>
       <Footer />
     </Box>

@@ -10,6 +10,7 @@ import UserProfile from "../Components/UserProfile";
 import UserProfile2 from "../Components/UserProfile2";
 import UserNavbar from "../Components/UserNavbar";
 import ProfileSection from "../Components/ProfileSection"
+import Footer from "../Components/Footer";
 
 function LandingPage () {
 
@@ -55,6 +56,8 @@ function LandingPage () {
        </Container>
 
     </Container>
+
+    <Footer />
     </>
 }
 

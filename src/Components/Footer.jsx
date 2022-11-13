@@ -24,7 +24,7 @@ const Footer = () => {
       <Container minW="90%" minH="80%" mt="2%">
         <Flex justifyContent={"space-evenly"}>
           <Box minW={"30%"}>
-            <Image src={ProjectLogo} margin="auto" w="50%" h="50%" />
+            <Image src={ProjectLogo} margin="auto" w="150px" />
             <Text m="5%" align={"center"} fontSize="lg">
               Connect with us
             </Text>

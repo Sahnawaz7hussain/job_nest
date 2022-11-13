@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import projectlogo from "../../assets/projectlogo.png";
-import Footer from "../../Pages/Footer";
+import Footer from "../../Components/Footer";
 import { postNewJobActionFn } from "../../Redux/AppReducer/action";
 import { getLocalStorageData } from "../../utils/localData";
 import AdminNavbar from "./AdminNavbar";
@@ -32,6 +32,7 @@ const AdminJobPost = () => {
     location: "",
     skills: "",
     companyId: "",
+    posted:"0 DAY AGO"
   });
   const dispatch = useDispatch();
   const companyData = getLocalStorageData("adminLoginData") || {};
@@ -58,17 +59,23 @@ const AdminJobPost = () => {
       companyId: companyData.token,
     });
   }, [setMaxP, setMinP, minP, maxP]);
+
+
   const handlePostJonOnClick = () => {
     // setNewJobData({
     dispatch(postNewJobActionFn(newJobData)).then((r) => {
-      navigate("/admin/jobs");
-      console.log("response of new company added;", r);
+      navigate("/user/recommendedjobs");
+      // console.log("response of new company added;", r);
     });
-    console.log("ne Job Data", newJobData);
+    // console.log("ne Job Data", newJobData);
   };
   if (!companyData.isAuth) {
     return <Navigate to="/admin" />;
   }
+
+
+
+
   return (
     <Box>
       <AdminNavbar />

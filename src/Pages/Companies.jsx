@@ -2,6 +2,7 @@ import { Box, Heading } from "@chakra-ui/react";
 import React from "react";
 import AllCompanies from "../Components/Companies/AllCompanies";
 import Sidebar from "../Components/Companies/Sidebar";
+import Footer from "../Components/Footer";
 
 import Navbar from "../Components/Navbar";
 
@@ -23,6 +24,7 @@ const Companies = () => {
         <Sidebar />
         <AllCompanies />
       </Box>
+      <Footer />
     </Box>
   );
 };

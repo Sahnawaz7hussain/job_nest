@@ -1,7 +1,7 @@
 import { Box, Heading } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import Footer from "../../Pages/Footer";
+import Footer from "../Footer";
 import { getLocalStorageData } from "../../utils/localData";
 import AdminNavbar from "./AdminNavbar";
 

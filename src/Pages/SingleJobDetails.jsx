@@ -8,6 +8,7 @@ import JobDetailsV2 from "../Components/JobDetailsV2";
 import JobDetailsV3 from "../Components/JobDetailsV3";
 import JobsDetailsV4 from "../Components/JobsDetailsV4";
 import UserNavbar from "../Components/UserNavbar";
+import Footer from "../Components/Footer";
 
 function SingleJobDetails () {
 
@@ -52,6 +53,8 @@ function SingleJobDetails () {
   </HStack>
 
 </Container>
+
+<Footer />
     </>
 }
 

@@ -32,9 +32,13 @@ function RecomJobs () {
 
     return <>
 
+<Container minW="100%" pb="35px">
+
     {jobsData.length>0 && jobsData.map((elem) => (
+
+       
         
-        <Container minW="100%" bgColor="#FFF" boxShadow={"md"} rounded='md' key={elem.id} onClick={() => handleClick (elem.id)} _hover={hoverEffect}>
+        <Box mb="15px" minW="100%" bgColor="#FFF" p="10px 0px" pl="24px" boxShadow={"md"} rounded='md' key={elem.id} onClick={() => handleClick (elem.id)} _hover={hoverEffect}>
 
         <Box mt="20px" pl="10px">
         <Heading fontSize={"16"} color="#091E42">{elem.title}</Heading>
@@ -73,16 +77,19 @@ function RecomJobs () {
                 <Box><Text fontSize={"13px"} color="#666666">{elem.skills}</Text></Box>
             </HStack>
 
-            <HStack w="fit-content" textAlign={"left"} mt="15px" mb="15px" ml="8px" fontWeight="500" p="4px 8px" color="#000000" bgColor="#D7F2E3">
+            <HStack  w="fit-content" textAlign={"left"} mt="15px" mb="15px" ml="8px" fontWeight="500" p="4px 8px" color="#000000" bgColor="#D7F2E3">
             <RepeatClockIcon fontSize={"10px"} />
             <Text fontSize={"10px"} >{elem.posted}</Text>
             </HStack>
 
        
-    </Container>
+    </Box>
+
+   
 
     ))}
 
+</Container>
     </>
 };
 

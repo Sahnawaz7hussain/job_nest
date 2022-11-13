@@ -4,7 +4,7 @@ import { Box,  Text, Stack, Flex, Icon,Image,Button,Popover,PopoverContent,Popov
     UnorderedList, Container,HStack,MenuButton,MenuList,Menu} from "@chakra-ui/react";
 import { MdClose, MdMenu } from "react-icons/md";
 import ProjectLogo from "../assets/projectlogo.png"
-import {  NavLink } from "react-router-dom";
+import {  Link, NavLink, useNavigate } from "react-router-dom";
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import SignIn from "../Pages/SignIn";
 // import { useNavigate } from "react-router-dom";
@@ -62,7 +62,7 @@ const MenuLinks1 = ({ isOpen }) => {
   <PopoverTrigger>
     <Center><NavLink to="/user"><Text fontSize=".95rem" fontWeight="500" _hover={links} align="center">Jobs </Text></NavLink></Center>
   </PopoverTrigger>
-  <PopoverContent m="auto" boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" width={{lg:"70%"}} fontWeight="500">
+  <PopoverContent m="auto" boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" width={{lg:"80%"}} fontWeight="500">
     <PopoverArrow />
     
     
@@ -140,7 +140,7 @@ const MenuLinks1 = ({ isOpen }) => {
   <PopoverTrigger>
     <Center><NavLink to="/companies"><Text fontSize=".95rem" fontWeight="500" _hover={links}>Companies </Text></NavLink></Center>
   </PopoverTrigger>
-  <PopoverContent m="auto" boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" width={{lg:"60%"}} fontWeight="500">
+  <PopoverContent m="auto" boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" width={{lg:"70%"}} fontWeight="500">
     <PopoverArrow />
     
     
@@ -216,7 +216,7 @@ const MenuLinks1 = ({ isOpen }) => {
   <PopoverTrigger>
     <Center><NavLink to="/services"><Text fontSize=".95rem" fontWeight="500" _hover={links}>Services </Text></NavLink></Center>
   </PopoverTrigger>
-  <PopoverContent m="auto" boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" width={{lg:"80%"}} fontWeight="500">
+  <PopoverContent m="auto" boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" width={{lg:"90%"}} fontWeight="500">
     <PopoverArrow />
     
     
@@ -313,14 +313,10 @@ const MenuLinks1 = ({ isOpen }) => {
 };
 
 const MenuLinks = ({ isOpen }) => {
-  
-  // const navigate=useNavigate()
-  const useName=JSON.parse(localStorage.getItem("signupData"))||""
-  // // const handelLogout=()=>{
-  // //  localStorage.removeItem("loggedin")
-  // //  navigate("/")
-  // // }
     
+
+
+
   return (
     <Box
       display={{ base: isOpen ? "block" : "none", md: "block" }}
@@ -338,9 +334,7 @@ const MenuLinks = ({ isOpen }) => {
        
      
         <MenuItem to="#">
-        <Flex gap="10">
-      
-              <Text fontSize="25" fontWeight="extrabold" > {useName.name} </Text> 
+        <Flex gap="10"> 
               <SignIn />
               
               </Flex>
@@ -351,18 +345,17 @@ const MenuLinks = ({ isOpen }) => {
         </MenuItem>
         <MenuItem to="#">
         <Menu>
-                    <MenuButton color={"black"}
-                    as={Button} rightIcon={<ChevronDownIcon />} backgroundColor="white">
+                    <Link to='/admin'><Button color={"#fff"} _hover={{bgColor:"#609DE6"}}
+                     backgroundColor="#4A90E2">
                         For Employers
-                    </MenuButton>
-                    <MenuList backgroundColor={"white"} color={"black"} align="center">
-                        <MenuItem>Buy Online</MenuItem>
+                    </Button></Link>
+                    {/* <MenuList backgroundColor={"white"} color={"black"} align="center">
                        <MenuItem>Hiring Solutions</MenuItem>
-                       <MenuItem>Employer Login</MenuItem>
-                       {/* <MenuItem>
+                       <MenuItem onClick={adminLoginFunc}>Employer Login</MenuItem>
+                       <MenuItem>
                         <Button onClick={handelLogout}>LOGOUT</Button>
-                        </MenuItem> */}
-                    </MenuList>
+                        </MenuItem> *
+                    </MenuList> */}
                 </Menu>
       
        </MenuItem>
