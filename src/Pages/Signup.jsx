@@ -212,7 +212,7 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
 
 
 
-<Flex justifyContent={"space-between"} w="25%" m="auto" fontSize={"10"} >
+<Flex justifyContent={"space-between"} color="blue" w="35%" m="auto" fontSize={"12"} >
   <Text >About  |</Text>
   <Text>Contact Us |</Text>
   <Text>FAQs |</Text>
@@ -220,7 +220,7 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
   <Text>RePort a Problem |</Text>
   <Text>Privacy Policy </Text>
 </Flex>
-<Text w="30%" m="auto" ml="45%" fontSize={"10"}>All rights reserved © 2022 Info Edge India Ltd.</Text>
+<Text w="30%" m="auto" mb="10%" ml="45%" fontSize={"10"}>All rights reserved © 2022 Info Edge India Ltd.</Text>
 
 
     </>
