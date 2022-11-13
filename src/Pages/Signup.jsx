@@ -53,10 +53,10 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
       <Link to="/"><Image  src={ProjectLogo} /></Link>
       {/* <Spacer></Spacer> */}
       
-      <p>Already Registered? 
+      <Text as={"p"}>Already Registered? 
         <Link to="/signin">
        <Box as='span' color="blue"> Login </Box></Link>
-        here</p>
+        here</Text>
       </Flex>
 
       </Box>
@@ -175,7 +175,7 @@ const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
  
  <GridItem colSpan={{base:2 , md:2}} >
     
-     <p >By clicking Register, you agree to the Terms and Conditions & Privacy Policy of JobNest.in</p>
+     <Text as={"p"} fontSize="12px">By clicking Register, you agree to the Terms and Conditions & Privacy Policy of JobNest.in</Text>
      
      <Input  type="submit" w="full" value={"Register"}></Input>
      
