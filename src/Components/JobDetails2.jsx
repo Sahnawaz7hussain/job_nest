@@ -1,13 +1,13 @@
-import { Box, Container, Heading, HStack, ListItem, Text, UnorderedList, VStack } from "@chakra-ui/react";
+import { Box, Container, Heading, HStack, Link, ListItem, Text, UnorderedList, VStack } from "@chakra-ui/react";
 import React from "react";
-import { FaTimesCircle, FaCheckCircle } from "react-icons/fa";
+import { FaTimesCircle, FaCheckCircle, FaFacebookSquare, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
 
 
 function JobDetails2 () {
 
     return <>
 
-    <Container minW="100%" border="1px solid red" pt="22px">
+    <Container minW="100%" bgColor="#FFF" boxShadow={"md"} rounded='md' pt="22px">
 
        <VStack w="100%" alignItems="start" backgroundColor="#E8F2FF99" fontWeight="500" pt="18px" pb="24px">
 
@@ -49,7 +49,7 @@ function JobDetails2 () {
         
        </VStack>
 
-       <VStack minW="100%" border="1px solid red" mt="20px" alignItems="start">
+       <VStack minW="100%" mt="20px" alignItems="start">
         <Box><Heading fontSize="18px" color="#000000">Job description</Heading></Box>
 
         <Box><Text mt="15px" fontWeight="500" fontSize="14px" color="#333333">Job Roles & Responsibilities :</Text></Box>
@@ -89,39 +89,39 @@ function JobDetails2 () {
     </VStack>
 
 
-    <VStack minW="100%" border="1px solid red" mt="20px" alignItems="start">
+    <VStack minW="100%" mt="20px" alignItems="start">
         <Box>
             <Text fontWeight="500" fontSize="13px" color="#999999">Role</Text>
-            <Heading fontSize="13px" color="#333333">Full Stack Developer</Heading>
+            <Heading fontSize="15px" mb="8px" color="#333333">Full Stack Developer</Heading>
 
             <Text fontWeight="500" fontSize="13px" color="#999999">Industry Type</Text>
-            <Heading fontSize="13px" color="#333333">IT Services & Consulting</Heading>
+            <Heading fontSize="15px" mb="8px" color="#333333">IT Services & Consulting</Heading>
 
             <Text fontWeight="500" fontSize="13px" color="#999999">Functional Area</Text>
-            <Heading fontSize="13px" color="#333333">Engineering - Software & QA</Heading>
+            <Heading fontSize="15px" mb="8px" color="#333333">Engineering - Software & QA</Heading>
 
             <Text fontWeight="500" fontSize="13px" color="#999999">Employment Type</Text>
-            <Heading fontSize="13px" color="#333333">Full Time, Permanent</Heading>
+            <Heading fontSize="15px" mb="8px" color="#333333">Full Time, Permanent</Heading>
 
             <Text fontWeight="500" fontSize="13px" color="#999999">Role Category</Text>
-            <Heading fontSize="13px" color="#333333">Software Development</Heading>
+            <Heading fontSize="15px" mb="8px" color="#333333">Software Development</Heading>
 
             </Box>
     </VStack>
 
 
-    <VStack minW="100%" border="1px solid red" mt="20px" alignItems="start">
+    <VStack minW="100%" mt="20px" alignItems="start">
     <Box><Heading fontSize="18px" color="#000000">Education</Heading></Box>
 
     <Box>
     <Text fontWeight="500" fontSize="13px" color="#999999">UG :</Text>
-    <Heading fontSize="13px" color="#333333">B.Tech/B.E. in Computers</Heading>
+    <Heading fontSize="15px" mb="8px" color="#333333">B.Tech/B.E. in Computers</Heading>
 
     <Text fontWeight="500" fontSize="13px" color="#999999">PG :</Text>
-    <Heading fontSize="13px" color="#333333">Any Postgraduate</Heading>
+    <Heading fontSize="15px" mb="8px" color="#333333">Any Postgraduate</Heading>
 
     <Text fontWeight="500" fontSize="13px" color="#999999">Doctorate :</Text>
-    <Heading fontSize="13px" color="#333333">Doctorate Not Required</Heading>
+    <Heading fontSize="15px" mb="8px" color="#333333">Doctorate Not Required</Heading>
     </Box>
 
     </VStack>
@@ -162,7 +162,15 @@ function JobDetails2 () {
 
     </VStack>
 
-    <HStack maxW="100%" border="1px solid red" h="30px" mt="15px"></HStack>
+    <HStack maxW="100%" justifyContent="space-between" pt="12px" pb="22px">
+        <HStack fontSize="25px">
+            <Box _hover={{cursor:"pointer"}}><FaFacebookSquare color="#3b5998" /></Box>
+            <Box _hover={{cursor:"pointer"}}><FaTwitterSquare color="#00ACEE" /></Box>
+            <Box _hover={{cursor:"pointer"}}><FaLinkedin color="#0A66C2" /></Box>
+        </HStack>
+
+        <Box><Link color="#4A90E2" href="#" fontSize="14px" _hover="" fontWeight="bold">Report this job</Link></Box>
+    </HStack>
 
     </Container>
     

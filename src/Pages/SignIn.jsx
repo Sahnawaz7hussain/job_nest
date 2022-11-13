@@ -7,11 +7,11 @@ import {
     DrawerContent,
     DrawerCloseButton,
     Button,Input,useDisclosure,Text,Flex,
-    FormLabel,Stack,Box,Spacer
+    FormLabel,Stack,Box
 
   } from '@chakra-ui/react'
   import {FcGoogle} from "react-icons/fc"
-  import { useNavigate } from 'react-router-dom'
+  import { useNavigate ,Link} from 'react-router-dom'
 
 const SignIn = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -23,17 +23,36 @@ const SignIn = () => {
     password:"",
     
   })
+  let arr=JSON.parse(localStorage.getItem("signupData")) || []
+  let flag=false
+
+   
   const handelLogin=(e)=>{
-    e.preventdefault()
-    const loggeduser=JSON.parse(localStorage.getItem("user"))
-    if(input.email===loggeduser.email && input.password===loggeduser.password){
-      localStorage.setItem("loggedin",true)
-      navigate("/")
+    e.preventDefault()
+   
+  
+    if(arr.length>0 ){
+      arr.filter((elem)=>{
+        if(elem.email===input.email && elem.password===input.password){
+         
+          
+          flag=true
+          localStorage.setItem("loginData",JSON.stringify(elem))
+          
+        }
+      })
+     
     }
-    else{
-      alert("wrong credentials")
+
+    if(flag){
+      navigate("/user")
+    }else{
+      alert("wrong")
     }
-  }
+
+   }
+  
+  
   return (
     <>
       <Button onClick={onOpen} colorScheme="blue" variant={"outline"}>Login</Button>
@@ -44,7 +63,8 @@ const SignIn = () => {
           <DrawerHeader p={10}>
                 <Flex justifyContent={"space-between"}>
                     <Text fontSize={"30"}>Login</Text>
-                    <Text fontSize={"18"}  p="2" color="blue">Register for free</Text>
+                    
+                    <Link to="/signup"><Text  fontSize={"18"}  p="2" color="blue">Register for free</Text></Link>
                 </Flex>
 
           </DrawerHeader>
@@ -60,6 +80,7 @@ const SignIn = () => {
                 <FormLabel htmlFor='username'>Username</FormLabel>
               <Input 
               placeholder='Enter your active Email ID ' 
+              isRequired
               name="email"
          value={input.email}
       onChange={(e)=>setInput({...input,[e.target.name] : e.target.value})}
@@ -71,6 +92,7 @@ const SignIn = () => {
                 <FormLabel htmlFor='username'>Password</FormLabel>
                 <Flex>
                 <Input placeholder="Enter your password"
+                isRequired
               type={passType1?'password':'text'}
               name="password"
          value={input.password}
@@ -86,7 +108,7 @@ const SignIn = () => {
               <Text color="blue" align="end" fontSize={12}>Forgot Password ?</Text>
                 </Box>
                 <Box backgroundColor={"blue"} >
-                <Input color="white" type={"submit"} value="Login"  form='my-form' 
+                <Input color={"white"} type={"submit"} value="Login"  form='my-form' 
                 />
                 </Box>
                 <Box align="center">
