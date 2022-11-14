@@ -1,7 +1,7 @@
 ## common-dock-7043
 <h1 align="center">Webste Name: jobnest.in</h1>
 <h2>Description</h2>
-<h3>Jobnest is a website for job seeker to find job and also helps companies to hire best candidate for thier company. It our website job seeker can create own register  </h3>
+<h3>This is a recruitment platform that provides hiring-related services to corporates/recruiters, placement agencies, and job seekers in India and overseas. It offers multiple products like Resume Database Access, Job Listings.</h3>
   
   <h2>Tech Stacks & Tools we have used.</h2>
   <h3> HTML | CSS | Javascript | ReactJS | Redux | Reat-Redux | React-Router | Json-server | LocalStorage | Json_apis | Axios | Redux_thunk. </h3>
