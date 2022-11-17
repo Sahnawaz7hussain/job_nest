@@ -4,7 +4,7 @@
 <h3>This is a recruitment platform that provides hiring-related services to corporates/recruiters, placement agencies, and job seekers in India and overseas. It offers multiple products like Resume Database Access, Job Listings.</h3>
   
   <h2>Tech Stacks & Tools we have used.</h2>
-  <h3> HTML | CSS | Javascript | ReactJS | Redux | Reat-Redux | React-Router | Json-server | LocalStorage | Json_apis | Axios | Redux_thunk. </h3>
+  <h3> HTML | CSS | Javascript | ReactJS | Redux | React-Redux | React-Router | Json-server | LocalStorage | Json_apis | Axios | Redux_thunk. </h3>
   <h2>Frame-Work For UI -> Chakra-UI</h2>
  
  <h2>Passionate Contributors</h2>
