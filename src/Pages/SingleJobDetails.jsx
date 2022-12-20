@@ -1,13 +1,15 @@
 import React from "react";
-import JobDetails1 from "../Components/JobDetails1";
-import { Box, Container, Heading, HStack, Stack, VStack } from "@chakra-ui/react";
-import JobDetails2 from "../Components/JobDetails2";
-import JobDetails3 from "../Components/JobDetails3";
-import JobDetailsV1 from "../Components/JobDetailsV1";
-import JobDetailsV2 from "../Components/JobDetailsV2";
-import JobDetailsV3 from "../Components/JobDetailsV3";
-import JobsDetailsV4 from "../Components/JobsDetailsV4";
-import UserNavbar from "../Components/UserNavbar";
+import { Container, HStack, Stack, VStack } from "@chakra-ui/react";
+import JobDetails1 from "../Components/Job Details/JobDetails1";
+import JobDetails2 from "../Components/Job Details/JobDetails2";
+import JobDetails3 from "../Components/Job Details/JobDetails3";
+import JobDetailsV1 from "../Components/Job Details/JobDetailsV1";
+import JobDetailsV2 from "../Components/Job Details/JobDetailsV2";
+import JobDetailsV3 from "../Components/Job Details/JobDetailsV3";
+import JobsDetailsV4 from "../Components/Job Details/JobsDetailsV4";
+import UserNavbar from "../Components/Landing Page/UserNavbar";
+import Footer from "../Components/Footer";
+
 
 function SingleJobDetails () {
 
@@ -52,6 +54,8 @@ function SingleJobDetails () {
   </HStack>
 
 </Container>
+
+<Footer />
     </>
 }
 

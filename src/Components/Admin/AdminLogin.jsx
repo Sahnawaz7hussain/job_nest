@@ -7,18 +7,21 @@ import {
   Heading,
   Image,
   Input,
+  Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import projectlogo from "../../assets/projectlogo.png";
+import Footer from "../Footer";
 import { postNewCompanyActionFn } from "../../Redux/AppReducer/action";
 import { getLocalStorageData, saveToLocalStorage } from "../../utils/localData";
+import AdminNavbar from "./AdminNavbar";
 
 const AdminLogin = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [adminAuth, setAdminAuth] = useState(false);
+  const companyLoginData = getLocalStorageData("adminLoginData") || {};
   const [adminLoginData, setAdminLoginData] = useState({
     email: "",
     password: "",
@@ -47,13 +50,13 @@ const AdminLogin = () => {
           let adminLoginData = {
             token: `${registerData.email}${registerData.password}`,
             isAuth: true,
+            companies: registerData.title,
           };
-          //setAdminAuth(true);
-          alert("Login Success and post company");
+          alert("Login Success");
           saveToLocalStorage("adminLoginData", adminLoginData);
+          navigate("/admin/postjob");
         })
         .catch((e) => {
-          setAdminAuth(true);
           alert("login success");
         });
     } else if (
@@ -62,64 +65,78 @@ const AdminLogin = () => {
     ) {
       // wrong creddd.
       alert("Wrong Credentials");
-      setAdminAuth(false);
     } else {
       alert("Login Failure");
     }
   };
+  if (companyLoginData.isAuth && companyLoginData.token.length !== 0) {
+    return <Navigate to="/admin/postjob" />;
+  }
   return (
-    <Container>
-      <Box
-        border="1px solid grey"
-        borderRadius={"10px"}
-        paddingY={"25px"}
-        paddingX={"15px"}
-      >
-        <Image
-          m="auto"
-          w="120px"
-          h="45px"
-          objectFit={"cover"}
-          src={projectlogo}
-          alt="logo"
-        />
-        <Heading mb="20px" as="h3" size="md">
-          Login
-        </Heading>
-        <FormControl>
-          <FormLabel>Email</FormLabel>
-          <Input
-            id="2"
-            mb="10px"
-            isRequired
-            placeholder="Email"
-            type="email"
-            name="email"
-            onChange={handleAdminLoginChange}
-          />
-          <FormLabel>Password</FormLabel>
-          <Input
-            mb="10px"
-            id="1"
-            placeholder="Password"
-            type="password"
-            name="password"
-            onChange={handleAdminLoginChange}
-          />
-        </FormControl>
-        <Button
-          _hover={{ color: "black", bg: "blue.700" }}
-          color="white"
-          mt="30px"
-          w="100%"
-          bg="#2870c1"
-          onClick={handleLoginOnClick}
+    <Box>
+      <AdminNavbar />
+      <Container>
+        <Box
+          border="1px solid grey"
+          borderRadius={"10px"}
+          paddingY={"25px"}
+          paddingX={"15px"}
         >
-          Submit
-        </Button>
-      </Box>
-      ;
-    </Container>
+          <Image
+            m="auto"
+            w="120px"
+            h="45px"
+            objectFit={"cover"}
+            src={projectlogo}
+            alt="logo"
+          />
+          <Heading mb="20px" as="h3" size="md">
+            Login
+          </Heading>
+          <FormControl>
+            <FormLabel>Email</FormLabel>
+            <Input
+              id="2"
+              mb="10px"
+              isRequired
+              placeholder="Email"
+              type="email"
+              name="email"
+              onChange={handleAdminLoginChange}
+            />
+            <FormLabel>Password</FormLabel>
+            <Input
+              mb="10px"
+              id="1"
+              placeholder="Password"
+              type="password"
+              name="password"
+              onChange={handleAdminLoginChange}
+            />
+          </FormControl>
+          <Button
+            _hover={{ color: "black", bg: "blue.700" }}
+            color="white"
+            mt="30px"
+            w="100%"
+            bg="#2870c1"
+            onClick={handleLoginOnClick}
+          >
+            Submit
+          </Button>
+          <Text mt="15px">
+            Don't Have account{" "}
+            <Link to="/admin/register">
+              {" "}
+              <Box as="span" textDecoration={"underline"} color="blue">
+                Register
+              </Box>{" "}
+            </Link>{" "}
+          </Text>
+        </Box>
+      </Container>
+      <Footer />
+    </Box>
   );
 };
 

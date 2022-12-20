@@ -3,7 +3,8 @@ import { Box, Container, Heading, HStack, VStack } from "@chakra-ui/react";
 import RecomJobs from "../Components/RecomJobs";
 import RecomJobsV1 from "../Components/RecomJobsV1";
 import RecomJobsV2 from "../Components/RecomJobsV2";
-import UserNavbar from "../Components/UserNavbar";
+import UserNavbar from "../Components/Landing Page/UserNavbar";
+import Footer from "../Components/Footer";
 
 function RecommendedJobs () {
 
@@ -19,7 +20,7 @@ function RecommendedJobs () {
 
         <VStack w="64.3%" mr="6px" alignItems={"start"}>
 
-            <Box mb="4px"><Heading mt="25px"  fontSize="16px" color="#091E42">17 Jobs based on Your Desired Preferences</Heading></Box>
+            <Box mb="4px"><Heading mt="25px"  fontSize="16px" color="#091E42">Jobs based on Your Desired Preferences</Heading></Box>
             <RecomJobs />
 
         </VStack>
@@ -38,6 +39,8 @@ function RecommendedJobs () {
        </Container>
 
     </Container>
+
+    <Footer />
     
     </>
 }
