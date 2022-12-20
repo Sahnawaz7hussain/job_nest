@@ -6,6 +6,8 @@ import {
   Image,
   Button,
   Divider,
+  Center,
+  Stack
 } from "@chakra-ui/react";
 import React from "react";
 import {
@@ -19,11 +21,11 @@ import Foot from "../assets/foot.png";
 
 const Footer = () => {
   return (
-    <div>
+    <>
       <Divider borderWidth={"1px"} bg="gray" mt="5%" />
-      <Container minW="90%" minH="80%" mt="2%">
-        <Flex justifyContent={"space-evenly"}>
-          <Box minW={"30%"}>
+      <Container minW="90%" minH="80%" mt="2%" >
+        <Flex justifyContent={"space-between"} flexDirection={["column","column","column","row"]}>
+          <Box minW={"30%"} mr="10px">
             <Image src={ProjectLogo} margin="auto" w="150px" />
             <Text m="5%" align={"center"} fontSize="lg">
               Connect with us
@@ -44,21 +46,25 @@ const Footer = () => {
               </Button>
             </Flex>
           </Box>
-          <Box minW="30%" p="1%" fontSize={"100%"} mt="3%">
-            <Flex justifyContent={"space-between"} gap="7%">
-              <Box alignItems="center">
+          <Box minW={["90%", "90%", "90%", "40%"]} p="1%" fontSize={"100%"} mt="3%"  >
+            <Flex justifyContent={"space-between"} flexDirection={["column", "row"]} pl={["30px", "0px"]} >
+              <Flex flexDirection={["row"]} justifyContent={["space-between", "space-around"]} width={["90%", "65%" ]}>
+              <Box pb={["30px", "0px"]}   >
+            
                 <Text>About us</Text>
                 <Text>Careers</Text>
                 <Text>Employer home</Text>
                 <Text>Sitemap</Text>
               </Box>
-              <Box alignItems="center">
+              <Box pb={["30px", "0px"]}>
                 <Text>Help center</Text>
                 <Text>Summons/Notices</Text>
                 <Text>Grievances</Text>
                 <Text>Report issue</Text>
               </Box>
-              <Box alignItems="center">
+
+              </Flex>
+              <Box  width={["90%", "30%"]} >
                 <Text>Privacy policy</Text>
                 <Text>Terms & conditions</Text>
                 <Text>Fraud alert</Text>
@@ -66,37 +72,65 @@ const Footer = () => {
               </Box>
             </Flex>
           </Box>
-          <Box m="5%" alignItems="center" minW="30%">
+          <Center minW="20%">
+          <Box alignItems="center" >
             <Image src={Foot} />
           </Box>
+
+          </Center>
         </Flex>
       </Container>
+
+
+
+
+
+
+
+
+
+
+      
       {/* <Divider borderWidth={"2px"} bg="gray"/> */}
 
-      <Container minW="90%" minH="80%" borderTop={"1px solid grey"}>
-        <Flex justifyContent={"space-between"} p="5">
+      <Container minW="90%"  borderTop={"1px solid grey"} mt="20px" border={"1px solid blue"}>
+        <Flex justifyContent={"space-between"} p="5" border="1px solid red" flexDirection={["column" ,"column","column" ,"row"]}>
+
+          <Stack border={"1px solid red"} flexDirection={"row"} width={["100%","100%","100%" ,"45%" ]}>
           <Image src="https://static.naukimg.com/s/0/0/i/new-homepage/infoedge-logo.svg" />
-          <Box fontSize={"70%"}>
+          <Box fontSize={"70%"}  border={"1px solid blue"} pl="10px">
             <Text>
               All trademarks are the property of their respective owners
             </Text>
             <Text>All rights reserved © 2022 Info Edge (India) Ltd.</Text>
           </Box>
-          <Box>
+          </Stack>
+
+          <Box  border={"1px solid blue"} >
             <Text>Our businesses</Text>
           </Box>
-          <Box>
-            <Flex>
-              <Image src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/shiksha.png" />
-              <Image src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/jeevansathi.png" />
-              <Image src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/iimjobs.png" />
-              <Image src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/nnacres.png" />
-              <Image src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/jobhai.png" />
+
+          <Stack  flexDirection={"row"}>
+          
+          <Box  border={"1px solid red"} width="100%" >
+            <Flex flexDirection={["column","row","row","row"]}>
+              <Flex flexDirection={"row"} mb={["20px"]}>
+              <Image src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/shiksha.png" width={["50%", "50%","50%" ]} />
+              <Image src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/iimjobs.png" width={["50%", "50%","50%"]}/>
+              </Flex>
+             
+             <Flex>
+             <Image src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/nnacres.png" width={["50%", "50%","50%"]}/>
+              <Image src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/jobhai.png" width={["50%", "50%","50%"]}/>
+             </Flex>
+              
+             
             </Flex>
           </Box>
+          </Stack>
         </Flex>
       </Container>
-    </div>
+    </>
   );
 };
 
