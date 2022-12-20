@@ -52,7 +52,7 @@ const Sidebar = () => {
     setSearchParams(params);
   }, [sector, setSearchParams, industry, locationFilter]);
 
-  console.log("sector", industry);
+  // console.log("sector", industry);
   return (
     <Box h="auto" w={"250px"}>
       <Box
@@ -115,8 +115,8 @@ const Sidebar = () => {
           </Checkbox>
           <Checkbox
             onChange={handleIndustryOnChange}
-            value={"itservices&onsulting"}
-            defaultChecked={industry.includes("itservices&onsulting")}
+            value={"itservicesandconsulting"}
+            defaultChecked={industry.includes("itservicesandconsulting")}
           >
             <Text fontSize={"14px"}>IT Services & Consulting</Text>
           </Checkbox>
