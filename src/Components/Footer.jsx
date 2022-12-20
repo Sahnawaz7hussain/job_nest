@@ -93,12 +93,12 @@ const Footer = () => {
       
       {/* <Divider borderWidth={"2px"} bg="gray"/> */}
 
-      <Container minW="90%"  borderTop={"1px solid grey"} mt="20px" border={"1px solid blue"}>
-        <Flex justifyContent={"space-between"} p="5" border="1px solid red" flexDirection={["column" ,"column","column" ,"row"]}>
+      <Container minW="90%"  borderTop={"0px solid grey"} mt="20px" border={"0px solid blue"}>
+        <Flex justifyContent={"space-between"} p="5" border="0px solid red" flexDirection={["column" ,"column","column" ,"row"]}>
 
-          <Stack border={"1px solid red"} flexDirection={"row"} width={["100%","100%","100%" ,"45%" ]}>
+          <Stack border={"0px solid red"} flexDirection={"row"} width={["100%","100%","100%" ,"45%" ]}>
           <Image src="https://static.naukimg.com/s/0/0/i/new-homepage/infoedge-logo.svg" />
-          <Box fontSize={"70%"}  border={"1px solid blue"} pl="10px">
+          <Box fontSize={"70%"}  border={"0px solid blue"} pl="10px">
             <Text>
               All trademarks are the property of their respective owners
             </Text>
@@ -106,13 +106,13 @@ const Footer = () => {
           </Box>
           </Stack>
 
-          <Box  border={"1px solid blue"} >
+          <Box  border={"0px solid blue"} >
             <Text>Our businesses</Text>
           </Box>
 
           <Stack  flexDirection={"row"}>
           
-          <Box  border={"1px solid red"} width="100%" >
+          <Box  border={"0px solid red"} width="100%" >
             <Flex flexDirection={["column","row","row","row"]}>
               <Flex flexDirection={"row"} mb={["20px"]}>
               <Image src="https://static.naukimg.com/s/0/0/i/new-homepage/footer-logos/shiksha.png" width={["50%", "50%","50%" ]} />
