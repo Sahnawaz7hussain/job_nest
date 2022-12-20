@@ -3,7 +3,7 @@ import { Box, Container, Heading, HStack, VStack } from "@chakra-ui/react";
 import RecomJobs from "../Components/RecomJobs";
 import RecomJobsV1 from "../Components/RecomJobsV1";
 import RecomJobsV2 from "../Components/RecomJobsV2";
-import UserNavbar from "../Components/UserNavbar";
+import UserNavbar from "../Components/Landing Page/UserNavbar";
 import Footer from "../Components/Footer";
 
 function RecommendedJobs () {

@@ -1,14 +1,13 @@
-import { Container, Flex, HStack, Box, Image, Center, Text, Stack, Button,
-    color, Popover, PopoverTrigger, PopoverContent, PopoverArrow, 
-    PopoverCloseButton, PopoverHeader, PopoverBody, VStack, List, ListItem, ListIcon,
-    OrderedList,UnorderedList, Input, } from "@chakra-ui/react";
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
-import { ChevronDownIcon, Search2Icon } from '@chakra-ui/icons'
-import { useNavigate } from "react-router-dom";
-import ProjectLogo from "../assets/projectlogo.png"
-import { FaAlignLeft, FaBell } from "react-icons/fa";
+import { Container, Flex, HStack, Box, Image, Center, Text, Stack, 
+  Popover, PopoverTrigger, PopoverContent, PopoverArrow, 
+  PopoverBody, ListItem, UnorderedList, Input, } from "@chakra-ui/react";
+import { Link} from "react-router-dom";
+import { Search2Icon } from '@chakra-ui/icons'
+import ProjectLogo from "../../assets/projectlogo.png"
+import { FaBell } from "react-icons/fa";
 import ProfileSection from "./ProfileSection";
+import SmallScreenNavbar from "./SmallScreenNavbar";
 
 
 function UserNavbar () {
@@ -16,27 +15,20 @@ function UserNavbar () {
    
     const links = {color:"gray", cursor:"pointer"};
     const links1 = {color:"#4A90E2", cursor:"pointer"}
-    const navigate = useNavigate()
-
-    // const userProfileSection = () => {
-
-    //   <Flex><ProfileSection /></Flex>
-    // }
-
-    //   const handleSignup = () => {
-    //     navigate("/signup")
-      
-    // }
 
     return (
-        <Container maxW="100%"
+
+
+        <Container minW="103%"
+        ml="-18px"
+        mb="3px"
         boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"
         position="sticky"
         top="0"
         zIndex="4"
         backgroundColor="white"
         >
-            <Flex h="74px"  p="0px 9.5%" justifyContent={"space-between"}>
+            <Flex h="74px"  w={["95%","95%","80%"]} m="auto" justifyContent={"space-between"}>
             
       <Center>
       <Box>
@@ -45,7 +37,7 @@ function UserNavbar () {
       </Center>
       
 
-     <HStack minW="64%" justifyContent="space-between">
+     <HStack display={["none", "none","flex"]} minW="64%" justifyContent="space-around">
 
      <HStack>
         <Box>
@@ -163,25 +155,25 @@ function UserNavbar () {
   <PopoverTrigger>
     <Center><Text fontSize=".95rem" fontWeight="500" _hover={links}>Services</Text></Center>
   </PopoverTrigger>
-  <PopoverContent boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" minW="1010px" fontWeight="500">
+  <PopoverContent boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" ml={["0px", "0px","20px", "18px"]} minW={["","","800px","1010px"]} fontWeight="500">
     <PopoverArrow />
 
     <PopoverBody>
       <Container minW="100%" alignItems="start">
 
-     <Flex pt="20px" minWidth="100%">
+     <Flex pt="20px" minWidth="100%" fontSize={["14px", "14px","13px","17px"]}>
       <HStack alignItems="start" ml="-10px" borderRight="1px">
          <UnorderedList listStyleType="none"  spacing={1.5} textAlign="left" pr="30px" pb="10px">
   <ListItem fontWeight="bold">Resume writing</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Text resume</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Visual resume</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Resume critique</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px"  color="#445578">Text resume</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px"  color="#445578">Visual resume</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px"  color="#445578">Resume critique</ListItem>
 
   <ListItem fontWeight="bold" pt="28px">Find Jobs</ListItem>
 
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Jobs4u</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Priority applicant</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Contact us</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Jobs4u</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Priority applicant</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Contact us</ListItem>
 
 </UnorderedList>
          </HStack>
@@ -192,13 +184,13 @@ function UserNavbar () {
 
   <ListItem fontWeight="bold">Get recruiter's attention</ListItem>
 
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Resume display</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Recruiter connection</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Job search booster</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Resume display</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Recruiter connection</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Job search booster</ListItem>
 
   <ListItem fontWeight="bold" pt="28px">Monthly subscriptions</ListItem>
 
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Basic & premium plans</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Basic & premium plans</ListItem>
 
 </UnorderedList>
          </HStack>
@@ -211,13 +203,13 @@ function UserNavbar () {
 
   <ListItem fontWeight="bold">Learn & upskill</ListItem>
 
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Data Science courses</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Technology courses</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Management courses</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Finance courses</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Design courses</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Healthcare courses</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Degree programs</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Data Science courses</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Technology courses</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Management courses</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Finance courses</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Design courses</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Healthcare courses</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Degree programs</ListItem>
 
 
 </UnorderedList>
@@ -230,10 +222,10 @@ function UserNavbar () {
 
   <ListItem fontWeight="bold">Free resume resources</ListItem>
 
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Resume maker for freshers</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Resume quality score</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Resume samples</ListItem>
-  <ListItem onClick={onClose} _hover={links1} pt="4px" fontSize="17px" color="#445578">Job letter samples</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Resume maker for freshers</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Resume quality score</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Resume samples</ListItem>
+  <ListItem onClick={onClose} _hover={links1} pt="4px" color="#445578">Job letter samples</ListItem>
 
 </UnorderedList>
          </HStack>
@@ -271,6 +263,11 @@ function UserNavbar () {
 
      <ProfileSection />
 
+     </HStack>
+
+
+     <HStack display={["flex","flex","none"]}>
+     <SmallScreenNavbar />
      </HStack>
 
     

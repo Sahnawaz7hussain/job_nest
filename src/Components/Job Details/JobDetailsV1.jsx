@@ -1,7 +1,8 @@
 import { Box, Container, Heading, HStack, Image, Text } from "@chakra-ui/react";
 import React from "react";
+import location from "../../assets/location.png"
 import { StarIcon } from "@chakra-ui/icons";
-import location from "../assets/location.png"
+
 
 function JobDetailsV1 () {
 

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { Box, Button, Container, Heading, HStack, Image, Text, VStack } from "@chakra-ui/react";
-import { getSingleJobDetails } from "../Redux/AppReducer/action";
+import { getSingleJobDetails } from "../../Redux/AppReducer/action";
 import { StarIcon } from "@chakra-ui/icons";
-import wallet from "../assets/wallet.png"
+import wallet from "../../assets/wallet.png"
+
+
 
 
 function JobDetails1 () {

@@ -5,7 +5,7 @@ import { useNavigate,Link,NavLink} from 'react-router-dom'
 // import { FaGoogle } from 'react-icons/fa'
 import {GiSchoolBag} from "react-icons/gi"
 import ProjectLogo from "../assets/projectlogo.png"
-import Regimage from "../assets/regimage.png"
+// import Regimage from "../assets/regimage.png"
 import { useMediaQuery } from "@chakra-ui/react"
 import {GiDiscGolfBag} from "react-icons/gi"
 import {FcGoogle} from "react-icons/fc"

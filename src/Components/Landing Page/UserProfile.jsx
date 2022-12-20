@@ -1,5 +1,5 @@
 import { InfoOutlineIcon } from "@chakra-ui/icons";
-import { Box, Button, Center, Container, Heading, HStack, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Center, Container, Heading, HStack, Image, Stack, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 
 function UserProfile () {
@@ -35,12 +35,14 @@ function UserProfile () {
             </HStack>
 
             <HStack minW="full" mt="12px" pb="22px">
-                <VStack alignItems="start" border="1px solid black" pl="8px" lineHeight="0px" p="5px 9px 16px 6px" _hover={{cursor:"pointer"}}>
+                <VStack alignItems="start" border="1px solid black" pl="8px" p="5px 9px 16px 6px" _hover={{cursor:"pointer"}}>
                     <Heading fontSize="16px" color="#4A90E2">1</Heading>
+                    <Stack>
                     <Text fontSize="12px" fontWeight="500" color="#4A90E2">Search Appearances</Text>
+                    </Stack>
                 </VStack>
 
-                <VStack alignItems="start" border="1px solid black" pl="8px" lineHeight="0px" p="5px 9px 16px 12px" _hover={{cursor:"pointer"}}>
+                <VStack alignItems="start" border="1px solid black" pl="8px" p="5px 9px 16px 12px" _hover={{cursor:"pointer"}}>
                     <Heading fontSize="16px" color="#4A90E2">0</Heading>
                     <Text fontSize="12px" fontWeight="500" color="#4A90E2">Recruiter Actions</Text>
                 </VStack>

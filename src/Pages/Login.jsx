@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { Container,Flex,Box,Image,Button,
-Stack,FormLabel,Input,Text ,useDisclosure} from "@chakra-ui/react"
+Stack,FormLabel,Input,Text} from "@chakra-ui/react"
 import Navbar from '../Components/Navbar'
 import Newto from "../assets/newto.png"
 import { FcGoogle } from 'react-icons/fc'

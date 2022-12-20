@@ -1,6 +1,6 @@
 import { Box, Container, Heading, HStack, Image, Link, Text } from "@chakra-ui/react";
 import React from "react";
-import wallet from "../assets/wallet.png"
+import wallet from "../../assets/wallet.png"
 
 function LandingPage3 () {
 
