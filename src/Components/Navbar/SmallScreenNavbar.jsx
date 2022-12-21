@@ -283,9 +283,6 @@ function SmallScreenNavbar () {
      </Stack>
 
 
-    
-
-
         </DrawerContent>
       </Drawer>
 
