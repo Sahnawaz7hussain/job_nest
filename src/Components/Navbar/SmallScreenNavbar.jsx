@@ -65,19 +65,13 @@ function SmallScreenNavbar () {
         </Stack>
 
 
-
-
-
-
-
-
         <Stack ml="50px" mt="-25px">
         <Box>
         <Popover trigger="hover">
         {({ isOpen, onClose }) => (
          <>
   <PopoverTrigger>
-    <Text fontSize="1.4rem" fontWeight="500" _hover={links}>Companies</Text>
+    <Link to="/companies"><Text fontSize="1.4rem" fontWeight="500" _hover={links}>Companies</Text></Link>
   </PopoverTrigger>
   <PopoverContent boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" fontWeight="500">
     <PopoverArrow />
