@@ -85,7 +85,7 @@ function Navbar () {
         {({ isOpen, onClose }) => (
          <>
   <PopoverTrigger>
-    <Link to="/companies"><Center><Text fontSize=".95rem" fontWeight="500" _hover={links}>Companies</Text></Center></Link>
+    <Center><Link to="/companies"><Text fontSize=".95rem" fontWeight="500" _hover={links}>Companies</Text></Link></Center>
   </PopoverTrigger>
   <PopoverContent boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px" bg="#ffffff" minW="700px" fontWeight="500">
     <PopoverArrow />

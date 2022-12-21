@@ -65,6 +65,12 @@ function SmallScreenNavbar () {
         </Stack>
 
 
+
+
+
+
+
+
         <Stack ml="50px" mt="-25px">
         <Box>
         <Popover trigger="hover">
