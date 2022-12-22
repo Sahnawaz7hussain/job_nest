@@ -114,7 +114,7 @@ const MenuLinks1 = ({ isOpen }) => {
   <ListItem onClick={onClose} _hover={links}>Jobs by skill</ListItem>
   <ListItem onClick={onClose} _hover={links}>Jobs by location</ListItem>
   <ListItem onClick={onClose} _hover={links}>Jobs by designation</ListItem>
-  <ListItem onClick={onClose} _hover={links}>Create free job alert</ListItem>
+  {/* <ListItem onClick={onClose} _hover={links}>Create free job alert</ListItem> */}
   
 </UnorderedList>
          </HStack>
