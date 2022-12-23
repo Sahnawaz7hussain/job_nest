@@ -14,6 +14,7 @@
 - Sahnawaz Hussain - [[Portfolio](https://sahnawaz7hussain.github.io/)]
 - Amit Kumar Saini - [[Portfolio](https://iamamitkumarsaini.github.io/)]
 - Vivek Bhatt - [[Portfolio](https://vivek-bhatt05.github.io/)]
+- Ajay Thakur - [[Portfolio](https://jayvaish.github.io/)]
 - Martina Varghese -  [[Portfolio](https://luminous-vacherin-c3a4cf.netlify.app/)]
 
  
