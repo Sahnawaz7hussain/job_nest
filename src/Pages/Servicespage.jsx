@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
  
 
 const Servicespage = () => {
-    
+
   const [isLargerThan600] = useMediaQuery('(min-width: 900px)')
     const roles=[
         {
@@ -37,6 +37,14 @@ const Servicespage = () => {
             id:6,
             title: 'Quality Engineer',
             question:'(1.3K+ questions)'
+        },{
+            id:7,
+            title: 'Quality Engineer',
+            question:'(1.3K+ questions)'
+        },{
+            id:8,
+            title: 'Business Analyst',
+            question:'(2.8K+ questions)'
         }
     ]
 
@@ -71,6 +79,16 @@ const Servicespage = () => {
             title: 'Flipkart',
             question:'488 Interviews',
             img:'https://static.naukimg.com/s/0/0/i/ambitionbox-comp/flipkart.png'
+        },{
+            id:7,
+            title: 'Flipkart',
+            question:'488 Interviews',
+            img:'https://static.naukimg.com/s/0/0/i/ambitionbox-comp/flipkart.png'
+        },{
+            id:8,
+            title: 'TCS',
+            question:'2.5K+ Interviews',
+            img:'https://static.naukimg.com/s/0/0/i/ambitionbox-comp/tcs.png'
         }
     ]
   return(
