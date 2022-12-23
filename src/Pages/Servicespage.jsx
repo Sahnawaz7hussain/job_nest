@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
  
 
 const Servicespage = () => {
+    
   const [isLargerThan600] = useMediaQuery('(min-width: 900px)')
     const roles=[
         {
@@ -79,7 +80,7 @@ const Servicespage = () => {
       <div>
         <Container marginTop='50px' maxW='1200px'  display='flex' justifyContent='space-evenly' flexDir={isLargerThan600? "row":"column"}>
         <Box paddingTop='45px' w='250px'>
-            <Heading size='lg'>Prepare for your next interview</Heading>
+            <Heading size='lg'>Prepared for your next interview</Heading>
             <Image marginTop='15px' src='https://static.naukimg.com/s/0/0/i/ab-interview.png' alt='Interview' />
         </Box>
 
@@ -103,7 +104,7 @@ const Servicespage = () => {
 
 
 
-        <Box w='350px' boxShadow='rgba(100, 100, 111, 0.2) 0px 7px 29px 0px' borderRadius='10px' paddingTop='20px' textAlign='center'>
+        <Box w='350px' boxShadow='rgba(100, 100, 111, 0.2) 0px 8px 29px 0px' borderRadius='10px' paddingTop='20px' textAlign='center'>
         <Heading marginBottom='20px' size='md'>Interview questions by role</Heading>
         {roles.map((item)=>(
             <Box key={item.id} margin='20px'>
