@@ -45,6 +45,14 @@ const Servicespage = () => {
             id:8,
             title: 'Business Analyst',
             question:'(2.8K+ questions)'
+        },{
+            id:9,
+            title: 'Sales & Marketing',
+            question:'(911 questions)'
+        },{
+            id:4,
+            title: 'Financial Analyst',
+            question:'(894 questions)'
         }
     ]
 
@@ -89,6 +97,16 @@ const Servicespage = () => {
             title: 'TCS',
             question:'2.5K+ Interviews',
             img:'https://static.naukimg.com/s/0/0/i/ambitionbox-comp/tcs.png'
+        },{
+            id:9,
+            title: 'Cognizant',
+            question:'1.6K+ Interviews',
+            img:'https://static.naukimg.com/s/0/0/i/ambitionbox-comp/cognizant.png'
+        },{
+            id:10,
+            title: 'Accenture',
+            question:'2.8K+ Interviews',
+            img:'https://static.naukimg.com/s/0/0/i/ambitionbox-comp/accenture.png'
         }
     ]
   return(
